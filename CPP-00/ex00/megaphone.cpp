@@ -1,4 +1,3 @@
-#include "string.h"
 #include <iostream>
 
 int	main(int argc, char *argv[])
@@ -17,10 +16,12 @@ int	main(int argc, char *argv[])
 		j = 0;
 		while (argv[i][j])
 		{
-				std::cout << (char)std::toupper(argv[i][j]);
+			std::cout << (char)std::toupper(argv[i][j]);
 			j++;
 		}
 		i++;
+		if (i != argc)
+			std::cout << " ";
 	}
 	std::cout << std::endl;
 	return (0);

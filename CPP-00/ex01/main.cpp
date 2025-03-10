@@ -17,7 +17,7 @@ int	not_valid_pnumber(std::string phone_number)
 int	prompt_user_input(std::string text, std::string &varible)
 {
 	std::cout << text;
-	std::getline (std::cin, varible);
+	std::getline(std::cin, varible);
 	if (std::cin.eof())
 		return (-1);
 	return (0);
@@ -54,8 +54,8 @@ int	select_index(void)
 	std::string input;
 	while (true)
 	{
-	if (prompt_user_input("Which index?", input))
-		break;
+		if (prompt_user_input("Which index?", input))
+			break ;
 		try
 		{
 			index = std::stoi(input);
@@ -91,7 +91,7 @@ int	main(void)
 	{
 		std::cout << "Options ADD, SEARCH, EXIT" << std::endl;
 		if (prompt_user_input("Enter your choice: ", input))
-		break ;
+			break ;
 		if (!input.compare("EXIT") || std::cin.eof())
 			break ;
 		else if (!input.compare("ADD"))

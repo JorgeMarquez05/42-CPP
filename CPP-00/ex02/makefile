@@ -1,7 +1,7 @@
 GREEN 		= \033[1;32m
 RESET 		= \033[0m
 
-CC			= g++ #-Wall #-Werror -Wextra
+CC			= c++ -Wall -Werror -Wextra
 CFLAGS		= 
 OBJ_DIR		= objects/
 NAME		= account

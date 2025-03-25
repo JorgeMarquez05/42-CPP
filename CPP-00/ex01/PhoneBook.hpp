@@ -1,9 +1,9 @@
 #ifndef phonebook_hpp
 # define phonebook_hpp
-# include "contact.hpp"
+# include "Contact.hpp"
 # define MAX_CONTACTS 8
 
-class Phonebook
+class PhoneBook
 {
   private:
 	Contact contacts[MAX_CONTACTS];
@@ -11,8 +11,8 @@ class Phonebook
 	int contact_count;
 
   public:
-	Phonebook();
-	~Phonebook(){};
+	PhoneBook();
+	~PhoneBook(){};
 	void add_contact(std::string first_name, std::string last_name,
 		std::string nickname, std::string darkest_secret,
 		std::string phone_number);

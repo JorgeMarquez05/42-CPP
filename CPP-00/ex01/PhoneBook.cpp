@@ -1,8 +1,8 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
-Phonebook::Phonebook() : index(0), contact_count(0){};
+PhoneBook::PhoneBook() : index(0), contact_count(0){};
 
-void Phonebook::add_contact(std::string first_name, std::string last_name,
+void PhoneBook::add_contact(std::string first_name, std::string last_name,
 	std::string nickname, std::string darkest_secret, std::string phone_number)
 {
 	if (index >= MAX_CONTACTS)
@@ -36,7 +36,7 @@ void	printColumn(std::string str)
 	}
 }
 
-void Phonebook::display_contact_table()
+void PhoneBook::display_contact_table()
 {
 	std::cout << "     Index| First Name|  Last Name|  Nickname \n";
 	std::cout << "----------------------------------------------\n";
@@ -57,7 +57,7 @@ void Phonebook::display_contact_table()
 	}
 }
 
-void Phonebook::search_contact(int index)
+void PhoneBook::search_contact(int index)
 {
 	if (index >= contact_count)
 	{

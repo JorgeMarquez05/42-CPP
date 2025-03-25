@@ -1,4 +1,4 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int	not_valid_pnumber(std::string phone_number)
 {
@@ -23,7 +23,7 @@ int	prompt_user_input(std::string text, std::string &varible)
 	return (0);
 }
 
-void	create_new_contact(Phonebook &p_book)
+void	create_new_contact(PhoneBook &p_book)
 {
 	std::string first_name, last_name, nickname, darkest_secret, phone_number;
 	if (prompt_user_input("Enter First Name: ", first_name))
@@ -71,7 +71,7 @@ int	select_index(void)
 	return (-1);
 }
 
-void	search_for_contact(Phonebook &p_book)
+void	search_for_contact(PhoneBook &p_book)
 {
 	int	index;
 
@@ -84,7 +84,7 @@ void	search_for_contact(Phonebook &p_book)
 
 int	main(void)
 {
-	Phonebook	p_book;
+	PhoneBook	p_book;
 
 	std::string input;
 	while (true)

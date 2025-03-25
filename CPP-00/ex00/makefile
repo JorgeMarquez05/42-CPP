@@ -1,8 +1,8 @@
 GREEN 		= \033[1;32m
 RESET 		= \033[0m
 
-CC			= c++ -Wall -Werror -Wextra
-CFLAGS		= 
+CC			= c++ 
+CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 OBJ_DIR		= objects/
 NAME		= megaphone
 
@@ -14,10 +14,10 @@ OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))
 all: $(NAME)
 
 $(NAME):		$(OBJ_FILES)
-		@$(CC) $(CFLAGS) -o $@ $^
+		@$(CC) $(CPPFLAGS) -o $@ $^
 
 $(OBJ_DIR)%.o:	$(SRC_FILES)| $(OBJ_DIR)
-		@$(CC) $(CFLAGS) -c $< -o $@
+		@$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)

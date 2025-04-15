@@ -1,7 +1,7 @@
 GREEN 		= \033[1;32m
 RESET 		= \033[0m
 
-CXX		= c++ 
+CPP		= c++ 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 OBJ_DIR		= objects/
 NAME		= weapon
@@ -14,10 +14,10 @@ OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))
 all: $(NAME)
 
 $(NAME):		$(OBJ_FILES)
-		@$(CXX) $(CPPFLAGS) -o $@ $^
+		@$(CPP) $(CPPFLAGS) -o $@ $^
 
 $(OBJ_DIR)%.o:	%.cpp | $(OBJ_DIR)
-		@$(CXX) $(CPPFLAGS) -c $< -o $@
+		@$(CPP) $(CPPFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)

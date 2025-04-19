@@ -2,5 +2,11 @@
 
 Zombie::Zombie(std::string name)
 {
-    Zombie *new_zombie;
+	this->name = name;
 }
+
+void Zombie::announce(void)
+{
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+

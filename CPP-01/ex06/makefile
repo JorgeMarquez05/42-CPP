@@ -4,9 +4,9 @@ RESET 		= \033[0m
 CPP			= c++ 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 OBJ_DIR		= objects/
-NAME		= phonebook
+NAME		= harlFilter
 
-FUNCTIONS = Contact main PhoneBook
+FUNCTIONS = Harl main
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

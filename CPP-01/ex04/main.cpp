@@ -1,6 +1,24 @@
 #include <fstream>
 #include <iostream>
 
+std::string replace_str(std::string text, char *argv[])
+{
+	size_t	pos;
+
+	std::string to_remove = argv[2];
+	std::string to_replace = argv[3];
+	pos = 0;
+	pos = text.find(argv[2], pos);
+	while (pos != std::string::npos)
+	{
+		text.erase(pos, to_remove.length());
+		text.insert(pos, to_replace);
+		pos += to_replace.length();
+		pos = text.find(argv[2], pos);
+	}
+	return (text);
+}
+
 int	main(int argc, char *argv[])
 {
 	if (argc != 4)
@@ -19,10 +37,7 @@ int	main(int argc, char *argv[])
 	}
 	while (std::getline(readfile, text))
 	{
-		std::cout << text << std::endl;
-		if (text.compare(argv[2]))
-			text = argv[3];
+		text = replace_str(text, argv);
 		Myfile << text;
 	}
-	// std::cout << argv[1] << std::endl;
 }

@@ -54,19 +54,12 @@ int	select_index(void)
 	std::string input;
 	while (true)
 	{
-		if (prompt_user_input("Which index?", input))
+		if (prompt_user_input("Which index? ", input))
 			break ;
-		try
-		{
-			index = std::stoi(input);
-			if (index >= 1 && index <= 8)
-				return (index);
-			std::cout << "Enter a valid index (1-8)" << std::endl;
-		}
-		catch (const std::exception &)
-		{
-			std::cout << "Put a valid digit" << std::endl;
-		}
+		index = std::atoi(input.c_str());
+		if (index >= 1 && index <= 8 && (input.length() < 2))
+			return (index);
+		std::cout << "Enter a valid index (1-8)" << std::endl;
 	}
 	return (-1);
 }

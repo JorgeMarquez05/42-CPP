@@ -16,10 +16,16 @@ int	not_valid_pnumber(std::string phone_number)
 
 int	prompt_user_input(std::string text, std::string &varible)
 {
-	std::cout << text;
-	std::getline(std::cin, varible);
-	if (std::cin.eof())
-		return (-1);
+	while (1)
+	{
+		std::cout << text;
+		std::getline(std::cin, varible);
+		if (std::cin.eof())
+			return (-1);
+		if (!varible.empty())
+			break ;
+		std::cout << "Input cannot be empty. Please try again." << std::endl;
+	}
 	return (0);
 }
 

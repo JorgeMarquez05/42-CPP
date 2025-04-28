@@ -2,13 +2,13 @@
 
 int	main(void)
 {
-    Fixed a(42);
+	Fixed a(42);
 
-    Fixed b;
+	Fixed b;
 
-    b =a;
+	b = a;
 
-    b.getRawBits();
+	b.getRawBits();
 
-    return(0);
+	return (0);
 }

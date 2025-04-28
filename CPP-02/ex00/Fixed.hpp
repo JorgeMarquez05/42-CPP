@@ -5,9 +5,9 @@ class Fixed
 {
 private:
     int value;
-    static const int fractional_bits;
+    static const int fractional_bits =8;
 public:
-    Fixed(/* args */);
+    Fixed();
     Fixed(int value);
     Fixed(const Fixed &fixed);
     ~Fixed();

@@ -7,23 +7,23 @@ Fixed::Fixed() : value()
 
 Fixed::Fixed(int n)
 {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	this->value = n << fractional_bits;
 }
 Fixed::Fixed(float f)
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	this->value = roundf(f * (1 << fractional_bits));
 }
 
 Fixed::Fixed(const Fixed &fixed) : value(fixed.value)
 {
-	std::cout << "Copy Constructor Called" << std::endl;
+	// std::cout << "Copy Constructor Called" << std::endl;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor Called" << std::endl;
+	// std::cout << "Destructor Called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &other)

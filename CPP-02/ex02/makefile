@@ -2,11 +2,11 @@ GREEN 		= \033[1;32m
 RESET 		= \033[0m
 
 CPP			= c++ 
-CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
+CPPFLAGS	= -std=c++98 -Wall -Wextra  -g #-Werror 
 OBJ_DIR		= objects/
-NAME		= harlFilter
+NAME		= fixed-point
 
-FUNCTIONS = Harl main
+FUNCTIONS = Fixed main
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

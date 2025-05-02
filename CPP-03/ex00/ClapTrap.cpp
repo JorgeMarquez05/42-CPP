@@ -10,6 +10,25 @@ ClapTrap::ClapTrap(std::string n) : name(n), hitPoints(10), energyPoints(10),
 	std::cout << "ClapTrap " << name << " created" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &other) : name(other.name),
+	hitPoints(other.hitPoints), energyPoints(other.energyPoints),
+	attackDamage(other.attackDamage)
+{
+	std::cout << "ClapTrap " << name << " copied" << std::endl;
+}
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+{
+	if (this != &other)
+	{
+		name = other.name;
+		hitPoints = other.hitPoints;
+		energyPoints = other.energyPoints;
+		attackDamage = other.attackDamage;
+	}
+	std::cout << "ClapTrap " << name << " assigned" << std::endl;
+	return (*this);
+} 
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap " << name << " blows" << std::endl;

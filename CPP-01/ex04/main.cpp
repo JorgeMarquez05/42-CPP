@@ -28,6 +28,11 @@ int	main(int argc, char *argv[])
 	}
 	std::string text;
 	std::ifstream readfile(argv[1]);
+	if (!readfile.is_open())
+	{
+		std::cerr << "Failed to open file: " << argv[1] << std::endl;
+		return (1);
+	}
 	std::string file_out = std::string(argv[1]) + ".replace";
 	std::ofstream Myfile(file_out.c_str());
 	if (!Myfile.is_open())

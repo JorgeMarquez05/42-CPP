@@ -36,3 +36,21 @@ void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << name << " is now in Gatekeeper mode!" << std::endl;
 }
+
+void ScavTrap::attack(const std::string &target)
+{
+	if (hitPoints == 0)
+	{
+		std::cout << "ScavTrap " << name << " has no health points" << std::endl;
+		return ;
+	}
+	if (energyPoints == 0)
+	{
+		std::cout << "ScavTrap " << name << " has no energy points" << std::endl;
+		return ;
+	}
+	std::cout << "ScavTrap " << name << " attacks " << target;
+	std::cout << ", causing " << attackDamage << " points of damage !";
+	std::cout << std::endl;
+	energyPoints--;
+}

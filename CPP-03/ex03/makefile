@@ -4,9 +4,9 @@ RESET 		= \033[0m
 CPP			= c++ 
 CPPFLAGS	= -std=c++98 -Wall -Wextra  -g #-Werror 
 OBJ_DIR		= objects/
-NAME		= DiamondTrap
+NAME		= FragTrap
 
-FUNCTIONS = ClapTrap main FragTrap DiamondTrap ScavTrap
+FUNCTIONS = ClapTrap main FragTrap ScavTrap
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

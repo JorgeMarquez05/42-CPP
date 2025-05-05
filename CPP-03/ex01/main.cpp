@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-	ScavTrap bot("Trapii");
+	ScavTrap bot("bot");
 	bot.attack("Enemy");
 	bot.attack("Enemy");
 	bot.attack("Enemy");

@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-	ClapTrap bot("Trapii");
+	ClapTrap bot("bot");
 	bot.attack("Enemy");
 	bot.attack("Enemy");
 	bot.attack("Enemy");

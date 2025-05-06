@@ -6,7 +6,7 @@ CPPFLAGS	= -std=c++98 -Wall -Wshadow -Wextra  -g #-Werror
 OBJ_DIR		= objects/
 NAME		= DiamondTrap
 
-FUNCTIONS = ClapTrap main FragTrap ScavTrap
+FUNCTIONS = ClapTrap main FragTrap ScavTrap DiamondTrap
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

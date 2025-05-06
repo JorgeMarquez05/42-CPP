@@ -9,7 +9,7 @@ FragTrap::FragTrap() : ClapTrap("FragTrap")
 	std::cout << "FragTrap deafult created" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string n) : ClapTrap(n)
 {
 	hitPoints = 100;
 	energyPoints = 100;

@@ -21,6 +21,7 @@ int	main(void)
 	// // bot.guardGate();
 	// bot.highFivesGuys();
 	bot.takeDamage(500);
+	bot.takeDamage(500);
 	// // bot.takeDamage(5);
 	// bot.beRepaired(3);
 	// bot.takeDamage(5);

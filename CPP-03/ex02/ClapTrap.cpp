@@ -27,7 +27,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 	}
 	std::cout << "ClapTrap " << name << " assigned" << std::endl;
 	return (*this);
-} 
+}
 
 ClapTrap::~ClapTrap()
 {

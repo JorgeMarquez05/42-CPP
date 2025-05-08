@@ -1,0 +1,3 @@
+find . -type f -name makefile -execdir make fclean ;
+find . -type f -name "*.cpp" -exec c_formatter_42 {} \;
+ncdu ~

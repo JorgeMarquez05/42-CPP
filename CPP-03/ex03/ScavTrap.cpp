@@ -5,7 +5,6 @@ ScavTrap::ScavTrap() : ClapTrap("ScavTrav")
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
-	std::cout << "ScavTrap deafult created" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string n) : ClapTrap(n)

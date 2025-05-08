@@ -2,7 +2,7 @@ GREEN 		= \033[1;32m
 RESET 		= \033[0m
 
 CPP			= c++ 
-CPPFLAGS	= -std=c++98 -Wall -Wextra  -g #-Werror 
+CPPFLAGS	= -std=c++98 -Wall -Wextra  -g -Werror 
 OBJ_DIR		= objects/
 NAME		= fixed-point
 

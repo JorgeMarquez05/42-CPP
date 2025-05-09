@@ -9,9 +9,9 @@ class Animal
   public:
 	Animal();
 	Animal(std::string type);
-	~Animal();
+	virtual ~Animal();
 	std::string getType() const;
-	void makeSound() const;
+	virtual void makeSound()const;
 };
 
 Animal::Animal() : _type("default")
@@ -33,7 +33,7 @@ std::string Animal::getType() const
 	return (this->_type);
 }
 
-void Animal::makeSound() const
+void Animal::makeSound()const 
 {
 	std::cout << "Animal default sound" << std::endl;
 }

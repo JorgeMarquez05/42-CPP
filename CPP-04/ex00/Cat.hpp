@@ -6,7 +6,7 @@ class Cat : public Animal
   public:
 	Cat();
 	~Cat();
-	void makeSound();
+	void makeSound()const;
 };
 
 Cat::Cat() : Animal("Cat")
@@ -19,7 +19,7 @@ Cat::~Cat()
 	std::cout << "Cat destructor called" << std::endl;
 }
 
-void Cat::makeSound()
+void Cat::makeSound()const
 {
 	std::cout << "Miau Miau" << std::endl;   
 }

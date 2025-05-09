@@ -7,7 +7,7 @@ class Dog : public Animal
   public:
 	Dog();
 	~Dog();
-	void makeSound() const;
+	void makeSound()const ;
 };
 
 Dog::Dog() : Animal("Dog")

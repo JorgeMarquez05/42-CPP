@@ -1,4 +1,18 @@
-#include "Animal.hpp"
+#pragma once
+#include <iostream>
+
+class Animal
+{
+  protected:
+	std::string _type;
+
+  public:
+	Animal();
+	Animal(std::string type);
+	virtual ~Animal();
+	std::string getType() const;
+	virtual void makeSound()const;
+};
 
 Animal::Animal() : _type("default")
 {
@@ -8,19 +22,6 @@ Animal::Animal() : _type("default")
 Animal::Animal(std::string type) : _type(type)
 {
 	std::cout << "Animal constructor called" << std::endl;
-}
-Animal::Animal(const Animal &other) : _type(other._type)
-{
-	std::cout << "Animal copy constructor called" << std::endl;
-}
-Animal &Animal::operator=(const Animal &other)
-{
-	if (this != &other)
-	{
-		this->_type = other._type;
-	}
-	std::cout << "Animal copy assingnement operator called" << std::endl;
-	return (*this);
 }
 
 Animal::~Animal()
@@ -32,7 +33,7 @@ std::string Animal::getType() const
 	return (this->_type);
 }
 
-void Animal::makeSound() const
+void Animal::makeSound()const 
 {
 	std::cout << "Animal default sound" << std::endl;
 }

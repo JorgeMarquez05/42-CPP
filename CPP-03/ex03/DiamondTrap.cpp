@@ -46,6 +46,7 @@ DiamondTrap::~DiamondTrap()
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << "I am " << name << ",
+	std::cout << "I am " << name
+				<< ",
 		my ClapTrap name is " << ClapTrap::name << std::endl;
 }

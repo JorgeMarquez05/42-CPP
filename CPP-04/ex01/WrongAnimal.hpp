@@ -1,4 +1,18 @@
-#include "WrongAnimal.hpp"
+#pragma once
+#include <iostream>
+
+class WrongAnimal
+{
+  protected:
+	std::string _type;
+
+  public:
+	WrongAnimal();
+	WrongAnimal(std::string type);
+	virtual ~WrongAnimal();
+	std::string getType() const;
+	void makeSound()const;
+};
 
 WrongAnimal::WrongAnimal() : _type("default")
 {
@@ -19,7 +33,7 @@ std::string WrongAnimal::getType() const
 	return (this->_type);
 }
 
-void WrongAnimal::makeSound() const
+void WrongAnimal::makeSound()const 
 {
 	std::cout << "WrongAnimal default sound" << std::endl;
 }

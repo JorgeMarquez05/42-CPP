@@ -6,20 +6,7 @@ class Cat : public Animal
   public:
 	Cat();
 	~Cat();
+	Cat(const Cat &other);
+	Cat&operator=(const Cat &other);
 	void makeSound()const;
 };
-
-Cat::Cat() : Animal("Cat")
-{
-	std::cout << "Cat constructor called" << std::endl;
-}
-
-Cat::~Cat()
-{
-	std::cout << "Cat destructor called" << std::endl;
-}
-
-void Cat::makeSound()const
-{
-	std::cout << "Miau Miau" << std::endl;   
-}

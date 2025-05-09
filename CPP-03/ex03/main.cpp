@@ -7,11 +7,11 @@ int	main(void)
 {
 	// DiamondTrap bot;
 	DiamondTrap bot("bot");
-	// bot.attack("Enemy");
-	// bot.attack("Enemy");
-	// bot.attack("Enemy");
-	// bot.attack("Enemy");
-	// bot.attack("Enemy");
+	bot.attack("Enemy");
+	bot.attack("Enemy");
+	bot.attack("Enemy");
+	bot.attack("Enemy");
+	bot.attack("Enemy");
 	// bot.attack("Enemy");
 	// bot.attack("Enemy");
 	// bot.attack("Enemy");
@@ -19,7 +19,7 @@ int	main(void)
 	// // bot.attack("Enemy");
 	// // bot.attack("Enemy");
 	// // bot.guardGate();
-	// bot.highFivesGuys();
+	bot.highFivesGuys();
 	bot.takeDamage(500);
 	bot.takeDamage(500);
 	// // bot.takeDamage(5);

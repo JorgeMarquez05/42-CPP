@@ -4,34 +4,29 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-#define MAX_ANIMALS 10
 
 
 int	main(void)
 {
-	Animal animals[MAX_ANIMALS];
-
-	for(int idx=0; idx < MAX_ANIMALS; idx++)
-	{
-		if(idx < MAX_ANIMALS /2)	
-			animals[idx] = Dog();
-		else
-		{
-			std::cout << idx << std::endl;
-			animals[idx] = Cat();
-		}
-	}
+	// const Animal		*meta = new Animal();
+	const Animal		*j = new Dog();
+	const Animal		*i = new Cat();
+	
+	std::cout << std::endl << std::endl << std::endl << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); // will output the cat sound!
+	j->makeSound();
+	// meta->makeSound();
+	
+	std::cout << std::endl << std::endl << std::endl << std::endl;
+	
+	std::cout << std::endl << std::endl << std::endl << std::endl;
+	// delete				meta;
+	delete				i;
+	delete				j;
+	return (0);
 }
-
-// int main()
-// {
-// const Animal* j = new Dog();
-// const Animal* i = new Cat();
-// delete j;//should not create a leak
-// delete i;
-
-// return 0;
-// }
 
 // int	main(void)
 // {
@@ -44,6 +39,18 @@ int	main(void)
 // 	 delete beta;
 // 	 return(0);
 // }
+
+
+// int main()
+// {
+// const Animal* j = new Dog();
+// const Animal* i = new Cat();
+// delete j;//should not create a leak
+// delete i;
+
+// return 0;
+// }
+
 
 // int	main(void)
 // {

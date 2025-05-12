@@ -1,15 +1,16 @@
 #pragma once
+#include <iostream>
 
 class Brain
 {
 private:
-    /* data */
+std::string ideas[100];
 public:
-    Brain(/* args */);
+    Brain();
     ~Brain();
 };
 
-Brain::Brain(/* args */)
+Brain::Brain()
 {
 }
 

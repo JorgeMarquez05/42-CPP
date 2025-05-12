@@ -6,21 +6,8 @@ class Dog : public Animal
 {
   public:
 	Dog();
+	Dog(const Dog &other);
+	Dog& operator=(const Dog &other); 
 	~Dog();
 	void makeSound()const ;
 };
-
-Dog::Dog() : Animal("Dog")
-{
-	std::cout << "Dog constructor called" << std::endl;
-}
-
-Dog::~Dog()
-{
-	std::cout << "Dog destructot called" << std::endl;
-}
-
-void Dog::makeSound() const
-{
-	std::cout << "Woof Woof" << std::endl;
-}

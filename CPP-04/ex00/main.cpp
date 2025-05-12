@@ -11,7 +11,12 @@ int	main(void)
 	const Animal		*i = new Cat();
 	const WrongAnimal	*wrong = new WrongAnimal();
 	const WrongAnimal	*k = new WrongCat();
-	
+	delete				meta;
+	delete				i;
+	delete				j;
+	delete				wrong;
+	delete				k;
+
 	std::cout << std::endl << std::endl << std::endl << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
@@ -23,11 +28,6 @@ int	main(void)
 	k->makeSound(); // will output the animal sound!
 	wrong->makeSound();
 	std::cout << std::endl << std::endl << std::endl << std::endl;
-	delete				meta;
-	delete				i;
-	delete				j;
-	delete				wrong;
-	delete				k;
 	return (0);
 }
 

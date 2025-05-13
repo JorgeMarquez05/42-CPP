@@ -4,6 +4,7 @@
 class Cure : public AMateria
 {
 private:
+
 public:
     Cure();
     ~Cure();
@@ -15,7 +16,7 @@ public:
 Cure::Cure() : AMateria("cure")
 {
     std::cout << "Cure Constructor called" << std::endl;
-}
+}a
 
 Cure::~Cure()
 {

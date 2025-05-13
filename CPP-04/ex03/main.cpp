@@ -23,12 +23,14 @@ int	main(void)
 {
 	IMateriaSource	*src;
 	AMateria		*tmp;
-    
-	src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	tmp = src->createMateria("ice");
-	tmp = src->createMateria("cure");
+	Ice *big = new Ice();
+	Cure *little = new Cure();
+	
+	// src = new MateriaSource();
+	// src->learnMateria(new Ice());
+	// src->learnMateria(new Cure());
+	// tmp = src->createMateria("ice");
+	// tmp = src->createMateria("cure");
 	delete			src;
 	return (0);
 }

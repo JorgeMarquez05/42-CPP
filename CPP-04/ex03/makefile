@@ -2,11 +2,11 @@ GREEN 		= \033[1;32m
 RESET 		= \033[0m
 
 CPP			= c++ 
-CPPFLAGS	= -std=c++98 -Wall -Wshadow -Wextra  -g -Werror 
+CPPFLAGS	= -std=c++98 #-Wall -Wextra  -g #-Werror 
 OBJ_DIR		= objects/
-NAME		= Animals
+NAME		= Interface
 
-FUNCTIONS = Animal Brain WrongAnimal Cat WrongCat Dog main
+FUNCTIONS = main AMateria
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

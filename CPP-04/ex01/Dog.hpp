@@ -3,7 +3,6 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-
 class Dog : public Animal
 {
   private:
@@ -15,5 +14,5 @@ class Dog : public Animal
 	Dog &operator=(const Dog &other);
 	~Dog();
 	void makeSound() const;
-	Brain *getBrain()const;
+	Brain *getBrain() const;
 };

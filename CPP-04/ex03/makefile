@@ -2,11 +2,11 @@ GREEN 		= \033[1;32m
 RESET 		= \033[0m
 
 CPP			= c++ 
-CPPFLAGS	= -std=c++98 #-Wall -Wextra  -g #-Werror 
+CPPFLAGS	= -std=c++98 -g -Wall -Wextra #-Werror 
 OBJ_DIR		= objects/
 NAME		= Interface
 
-FUNCTIONS = main AMateria
+FUNCTIONS = main AMateria Character Cure Ice MateriaSource
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

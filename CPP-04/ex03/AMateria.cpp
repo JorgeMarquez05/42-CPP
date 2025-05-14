@@ -12,5 +12,10 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-    
+    std::cout << "AMateria default use " << target.getName() << std::endl;
+}
+
+AMateria::~AMateria()
+{
+    std::cout << "AMateria Destructor called" << std::endl;
 }

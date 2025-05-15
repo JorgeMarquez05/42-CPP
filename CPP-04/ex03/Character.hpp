@@ -14,9 +14,12 @@ private:
 public:
     Character();
     Character(std::string n);
+    Character(const Character &other);
+    Character & operator=(const Character &other);
     std::string const & getName() const;
     void equip(AMateria* m);
     void unequip(int idx);
+    void expand_floor();
     void use(int idx, ICharacter& target);
     ~Character();
 };

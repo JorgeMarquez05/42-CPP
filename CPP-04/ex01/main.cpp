@@ -14,7 +14,6 @@ int main(void) {
       animals[idx] = Dog();
     else {
       animals[idx] = Cat();
-      std::cout << idx << std::endl;
     }
   }
 }

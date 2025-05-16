@@ -2,10 +2,22 @@
 
 Cat::Cat() : Animal("Cat") {
   brain = new Brain();
-  std::cout << "Cat constructor called" << std::endl;
+  brain->set_all_ideas("about knocking things off the table");
+  std::cout << "Cat default constructor called" << std::endl;
 }
 
-void Cat::makeSound() const { std::cout << "Miau Miau" << std::endl; }
+Cat::Cat(const std::string type) : Animal(type)
+{
+  brain = new Brain();
+  brain->set_all_ideas("about knocking things off the table");
+    std::cout << "Cat constructor called" << std::endl;
+}
+
+void Cat::makeSound() const {
+  std::cout << "Miau Miau" << std::endl;
+}
+
+
 
 Cat::Cat(const Cat &other) : Animal(other) {
   brain = new Brain(*other.brain);
@@ -26,3 +38,11 @@ Cat::~Cat() {
   delete brain;
   std::cout << "Cat destructor called" << std::endl;
 }
+
+Brain &Cat::getBrain() const
+{
+  return(*this->brain);
+}
+std::string Cat::getIdea(int idx) const {
+  return (this->brain->get_idea(idx)); 
+ }

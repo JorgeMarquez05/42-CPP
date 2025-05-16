@@ -25,3 +25,8 @@ std::string AAnimal::getType() const { return (this->_type); }
 // {
 // 	std::cout << "Animal default sound" << std::endl;
 // }
+
+// std::string Animal::getIdea(int index) const{
+//   (void) index;
+//   return NULL;
+// }

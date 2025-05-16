@@ -6,21 +6,24 @@
 #include "WrongCat.hpp"
 
 int main(void) {
-  const AAnimal *j = new Dog();
-  const AAnimal *i = new Cat();
+  const AAnimal *dog = new Dog();
+  const AAnimal *cat = new Cat();
 
   // const AAnimal		meta;
   std::cout << std::endl << std::endl << std::endl << std::endl;
-  std::cout << j->getType() << " " << std::endl;
-  std::cout << i->getType() << " " << std::endl;
-  i->makeSound(); // will output the cat sound!
-  j->makeSound();
+  std::cout << dog->getType() << " " << std::endl;
+  std::cout << cat->getType() << " " << std::endl;
+  cat->makeSound(); // will output the cat sound!
+  dog->makeSound();
   // meta->makeSound();
+std::cout << "Dog first thought " << dog->getIdea(0) << std::endl;
+std::cout << "Cat first thought " << cat->getIdea(0) << std::endl;
+
   std::cout << std::endl << std::endl << std::endl << std::endl;
   std::cout << std::endl << std::endl << std::endl << std::endl;
   // delete				meta;
-  delete i;
-  delete j;
+  delete cat;
+  delete dog;
   return (0);
 }
 

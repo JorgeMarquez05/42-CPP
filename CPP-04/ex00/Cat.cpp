@@ -1,7 +1,13 @@
 #include "Cat.hpp"
 
 Cat::Cat() : Animal("Cat") {
+  std::cout << "Cat default constructor called" << std::endl;
+}
+
+Cat::Cat(const std::string type): Animal(type)
+{
   std::cout << "Cat constructor called" << std::endl;
+
 }
 
 void Cat::makeSound() const { std::cout << "Miau Miau" << std::endl; }

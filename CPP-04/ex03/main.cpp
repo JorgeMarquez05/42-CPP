@@ -1,32 +1,32 @@
 #include "AMateria.hpp"
+#include "Character.hpp"
+#include "Cure.hpp"
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
-#include "Cure.hpp"
-#include "Character.hpp"
 
-int main(){
+int main() {
 
-    std::cout << "\n///////Subject Tests\\\\\\\\\\\n" << std::endl;
+  std::cout << "\n///////Subject Tests\\\\\\\\\\\n" << std::endl;
 
-    Character* me = new Character("me");
-    Character m2 ;
-    AMateria* tmp = new Ice();
-    me->equip(tmp);
-   tmp = new Cure();
-    me->equip(tmp);
-    me->equip(tmp);
-    Character* bob = new Character(*me);
-    bob->use(0, *me);
-    bob->use(1, *me);
-    bob->use(0, *me);
-    
-    me->unequip(0);
-    me->unequip(1);
-    std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-    m2 = *bob;
-    m2.unequip(0);
-    delete bob;
-    delete me;
+  Character *me = new Character("me");
+  Character m2;
+  AMateria *tmp = new Ice();
+  me->equip(tmp);
+  tmp = new Cure();
+  me->equip(tmp);
+  me->equip(tmp);
+  Character *bob = new Character(*me);
+  bob->use(0, *me);
+  bob->use(1, *me);
+  bob->use(0, *me);
+
+  me->unequip(0);
+  me->unequip(1);
+  std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+  m2 = *bob;
+  m2.unequip(0);
+  delete bob;
+  delete me;
 }
 
 // int main(){
@@ -79,12 +79,10 @@ int main(){
 
 //     character->unequip(0);
 
-
 //     std::cout << "\n///////Testing Miguel\\\\\\\\\\\n" << std::endl;
 
 //     ze->equip(cure_clone);
 //     ze->equip(ice_clone);
-
 
 //     ze->unequip(0);
 

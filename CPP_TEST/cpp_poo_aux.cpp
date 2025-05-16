@@ -2,37 +2,28 @@
 
 //! Access Specifiers
 
-class Employee
-{
-  protected:
-	int salary;
+class Employee {
+protected:
+  int salary;
 };
-class Programmer : public Employee
-{
-  public:
-	int bonus;
-	void setSalary(int s);
-	int getSalary();
+class Programmer : public Employee {
+public:
+  int bonus;
+  void setSalary(int s);
+  int getSalary();
 };
 
-void Programmer::setSalary(int s)
-{
-	salary = s;
-}
+void Programmer::setSalary(int s) { salary = s; }
 
-int Programmer::getSalary()
-{
-	return (salary);
-}
+int Programmer::getSalary() { return (salary); }
 
-int	main(void)
-{
-	Programmer	myObj;
+int main(void) {
+  Programmer myObj;
 
-	myObj.setSalary(1000);
-	myObj.bonus = 1500;
-	std::cout << "Salary " << myObj.getSalary() << std::endl;
-	std::cout << "Bonus " << myObj.bonus << std::endl;
+  myObj.setSalary(1000);
+  myObj.bonus = 1500;
+  std::cout << "Salary " << myObj.getSalary() << std::endl;
+  std::cout << "Bonus " << myObj.bonus << std::endl;
 }
 
 // !Multiple Inheritance

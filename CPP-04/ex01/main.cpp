@@ -6,20 +6,17 @@
 #include "WrongCat.hpp"
 #define MAX_ANIMALS 10
 
-int	main(void)
-{
-	Animal	animals[MAX_ANIMALS];
+int main(void) {
+  Animal animals[MAX_ANIMALS];
 
-	for (int idx = 0; idx < MAX_ANIMALS; idx++)
-	{
-		if (idx < MAX_ANIMALS / 2)
-			animals[idx] = Dog();
-		else
-		{
-			std::cout << idx << std::endl;
-			animals[idx] = Cat();
-		}
-	}
+  for (int idx = 0; idx < MAX_ANIMALS; idx++) {
+    if (idx < MAX_ANIMALS / 2)
+      animals[idx] = Dog();
+    else {
+      animals[idx] = Cat();
+      std::cout << idx << std::endl;
+    }
+  }
 }
 
 // int main()

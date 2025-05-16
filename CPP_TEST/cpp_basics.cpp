@@ -50,7 +50,8 @@
 //     std:: string &ref_str = final_str;
 //     std::cout << &final_str << std::endl;
 //     std::cout << &ref_str << std::endl;
-//     std::cout << "The lenght of final_str is: " << ref_str.length() << std::endl;
+//     std::cout << "The lenght of final_str is: " << ref_str.length() <<
+//     std::endl;
 // 	return (0);
 // }
 
@@ -65,7 +66,8 @@
 // 	std::cout << final_str << "\n";
 //     final_str.at(6)= 'M';
 // 	std::cout << final_str << "\n";
-//     std::cout << "The lenght of final_str is: " << final_str.length() << std::endl;
+//     std::cout << "The lenght of final_str is: " << final_str.length() <<
+//     std::endl;
 // 	std::cout << x;
 // 	return (0);
 // }

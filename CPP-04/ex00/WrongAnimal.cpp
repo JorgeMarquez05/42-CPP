@@ -8,18 +8,15 @@ WrongAnimal::WrongAnimal(std::string type) : _type(type) {
   std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &other) : _type(other._type)
-{
+WrongAnimal::WrongAnimal(const WrongAnimal &other) : _type(other._type) {
   std::cout << "WrongAnimal copy constructor called" << std::endl;
 }
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal &other)
-{
-  if(this != &other)
-  {
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other) {
+  if (this != &other) {
     _type = other._type;
     std::cout << "WrongAnimal copy assingment operator called" << std::endl;
   }
-  return(*this);
+  return (*this);
 }
 
 WrongAnimal::~WrongAnimal() {

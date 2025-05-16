@@ -1,5 +1,4 @@
 #pragma once
-#include "Animal.hpp"
 #include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal {

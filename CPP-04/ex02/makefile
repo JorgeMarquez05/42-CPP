@@ -6,7 +6,7 @@ CPPFLAGS	= -std=c++98 -Wall -Wshadow -Wextra  -g -Werror
 OBJ_DIR		= objects/
 NAME		= Animals
 
-FUNCTIONS = Animal Brain WrongAnimal Cat WrongCat Dog main
+FUNCTIONS = AAnimal Brain WrongAnimal Cat WrongCat Dog main
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

@@ -6,12 +6,11 @@ Dog::Dog() : Animal("Dog") {
   std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const std::string type): Animal(type){
+Dog::Dog(const std::string type) : Animal(type) {
   brain = new Brain();
   brain->set_all_ideas("about going for a walk");
   std::cout << "Dog constructor called" << std::endl;
 }
-
 
 Dog::Dog(const Dog &other) : Animal(other) {
   brain = new Brain(*other.getBrain());
@@ -37,11 +36,6 @@ Dog::~Dog() {
 
 void Dog::makeSound() const { std::cout << "Woof Woof" << std::endl; }
 
-std::string Dog::getIdea(int idx) const {
-   return (this->brain->get_idea(idx)); 
-  }
+std::string Dog::getIdea(int idx) const { return (this->brain->get_idea(idx)); }
 
-  Brain *Dog::getBrain() const
-{
-  return(this->brain);
-}
+Brain *Dog::getBrain() const { return (this->brain); }

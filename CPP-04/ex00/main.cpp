@@ -10,7 +10,7 @@ int main(void) {
   const Animal *i = new Cat();
   const WrongAnimal *wrong = new WrongAnimal();
   const WrongAnimal *k = new WrongCat();
-  
+
   std::cout << std::endl << std::endl << std::endl << std::endl;
   std::cout << j->getType() << " " << std::endl;
   std::cout << i->getType() << " " << std::endl;

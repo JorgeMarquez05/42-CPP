@@ -22,9 +22,7 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other) {
 WrongAnimal::~WrongAnimal() {
   std::cout << "WrongAnimal destructor called" << std::endl;
 }
-std::string WrongAnimal::getType() const {
-   return (this->_type); 
-}
+std::string WrongAnimal::getType() const { return (this->_type); }
 
 void WrongAnimal::makeSound() const {
   std::cout << "WrongAnimal default sound" << std::endl;

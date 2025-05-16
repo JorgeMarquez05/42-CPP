@@ -7,26 +7,26 @@
 
 int main(void) {
 
-  const Animal* dog = new Dog();
-  const Animal* cat = new Cat();
+  const Animal *dog = new Dog();
+  const Animal *cat = new Cat();
 
   std::cout << std::endl;
   std::cout << cat->getType() << " " << std::endl;
   std::cout << dog->getType() << " " << std::endl;
-  
+
   cat->makeSound();
   dog->makeSound();
-  
+
   std::cout << "Dog first thought " << dog->getIdea(0) << std::endl;
   std::cout << "Cat first thought " << cat->getIdea(0) << std::endl;
 
   delete dog;
   delete cat;
 
+  const Animal *yorkie = new Dog("Yorkie");
 
-  const Animal* yorkie = new Dog("Yorkie");
-
-  std::cout << "The dog " << yorkie->getType() << " have the thought: " << yorkie->getIdea(0) << std::endl;
+  std::cout << "The dog " << yorkie->getType()
+            << " have the thought: " << yorkie->getIdea(0) << std::endl;
 
   yorkie->makeSound();
 
@@ -34,18 +34,17 @@ int main(void) {
 
   Animal *animals[10];
 
-  for (int i = 0; i < 10; i++)
-  {
-    if(i < 10 /2)
+  for (int i = 0; i < 10; i++) {
+    if (i < 10 / 2)
       animals[i] = new Dog();
     else
       animals[i] = new Cat();
   }
 
-std::cout << std::endl;
+  std::cout << std::endl;
 
-for (int i = 0; i < 10; i++)
-  delete animals[i];
+  for (int i = 0; i < 10; i++)
+    delete animals[i];
 }
 
 // int main()

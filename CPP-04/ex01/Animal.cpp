@@ -25,7 +25,7 @@ void Animal::makeSound() const {
   std::cout << "Animal default sound" << std::endl;
 }
 
-std::string Animal::getIdea(int index) const{
-  (void) index;
+std::string Animal::getIdea(int index) const {
+  (void)index;
   return NULL;
 }

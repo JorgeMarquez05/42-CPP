@@ -16,8 +16,8 @@ int main(void) {
   cat->makeSound(); // will output the cat sound!
   dog->makeSound();
   // meta->makeSound();
-std::cout << "Dog first thought " << dog->getIdea(0) << std::endl;
-std::cout << "Cat first thought " << cat->getIdea(0) << std::endl;
+  std::cout << "Dog first thought " << dog->getIdea(0) << std::endl;
+  std::cout << "Cat first thought " << cat->getIdea(0) << std::endl;
 
   std::cout << std::endl << std::endl << std::endl << std::endl;
   std::cout << std::endl << std::endl << std::endl << std::endl;

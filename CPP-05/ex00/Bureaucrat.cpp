@@ -13,6 +13,20 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
         throw Bureaucrat::GradeTooLowException("Too Low");
     std::cout << "Bureaucrat Constructor Called" << std::endl;
 }
+Bureaucrat::Bureaucrat(const Bureaucrat &object) :_name(object.getName()), _grade(object.getGrade())
+{
+    std::cout << "Bureaucrat Copy Constructor Called" << std::endl;
+}
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &object)
+{
+    if(this != &object)
+    {
+        //this->_name = object.getName(); // !Cannot Do this its a const value
+        this->_grade = object.getGrade();
+    }
+    std::cout << "Bureaucrat Copy Assingment Operator Called" << std::endl;
+    return(*this);
+}
 
 std::string Bureaucrat::getName() const
 {
@@ -23,14 +37,16 @@ int Bureaucrat::getGrade() const
     return (_grade);
 }
 
-void Bureaucrat::increaseGrade() {
+void Bureaucrat::increaseGrade()
+{
     _grade = _grade - 1;
-    if(_grade < 1)
+    if (_grade < 1)
         throw Bureaucrat::GradeTooHighException("Too High");
 }
-void Bureaucrat::decreaseGrade() {
+void Bureaucrat::decreaseGrade()
+{
     _grade = _grade + 1;
-    if(_grade > 150)
+    if (_grade > 150)
         throw Bureaucrat::GradeTooLowException("Too Low");
 }
 

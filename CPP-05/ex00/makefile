@@ -32,4 +32,6 @@ fclean: clean
 
 re: fclean all
 
+r: re
+	./$(NAME)
 .PHONY: all clean fclean re

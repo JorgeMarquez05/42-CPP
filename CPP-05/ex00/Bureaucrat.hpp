@@ -26,6 +26,8 @@ private:
         const char *what() const throw() { return _message.c_str(); };
         ~GradeTooLowException() throw() {};
     };
+    Bureaucrat( const Bureaucrat &object);
+    Bureaucrat &operator =(const Bureaucrat &object);
 
 public:
     Bureaucrat();

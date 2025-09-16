@@ -3,6 +3,6 @@
 
 int main()
 {
-    std::cout << "Main Bureacrat " << std::endl;
-    return(0);
+	std::cout << "Main Bureacrat " << std::endl;
+	return (0);
 }

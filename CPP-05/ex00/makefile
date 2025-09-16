@@ -4,9 +4,9 @@ RESET 		= \033[0m
 CPP			= c++ 
 CPPFLAGS	= -std=c++98 -g -Wall -Wextra -Werror 
 OBJ_DIR		= objects/
-NAME		= AMateria
+NAME		= bureacrat
 
-FUNCTIONS = main AMateria Character Cure Ice MateriaSource
+FUNCTIONS = main
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

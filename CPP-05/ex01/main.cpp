@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <cstring>
 #include <iostream>
 
@@ -6,10 +7,8 @@ int main()
 {
 	try
 	{
-		Bureaucrat a("Alisson", 150);
-		std::cout << a << std::endl;
-		a.decreaseGrade();
-		std::cout << a << std::endl;
+	Form f("Tax Evasion", 15,150);
+	std::cout << f << std::endl;
 	}
 	catch (std::exception &e)
 	{

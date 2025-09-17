@@ -40,6 +40,7 @@ class Bureaucrat
 	int getGrade() const;
 	void increaseGrade();
 	void decreaseGrade();
+	
 	~Bureaucrat();
 };
 

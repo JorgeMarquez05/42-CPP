@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 
+#define LOWER_GRADE 150
+#define HIGHER_GRADE 1
+
 class Bureaucrat
 {
   private:
@@ -9,26 +12,21 @@ class Bureaucrat
 	class GradeTooHighException : public std::exception
 	{
 	  public:
-		GradeTooHighException(std::string message) : _message(message){};
+		GradeTooHighException(){};
 		const char *what() const throw()
 		{
-			return _message.c_str();
+			return "Grade is too High";
 		};
 		~GradeTooHighException() throw(){};
 
-	  private:
-		std::string _message;
 	};
 	class GradeTooLowException : public std::exception
 	{
-	  private:
-		std::string _message;
-
 	  public:
-		GradeTooLowException(std::string message) : _message(message){};
+		GradeTooLowException(){};
 		const char *what() const throw()
 		{
-			return _message.c_str();
+			return "Grade is too Low";;
 		};
 		~GradeTooLowException() throw(){};
 	};

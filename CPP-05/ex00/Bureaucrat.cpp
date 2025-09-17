@@ -7,10 +7,10 @@ Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 }
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
-	if (_grade < 1)
-		throw Bureaucrat::GradeTooHighException("Too High");
-	else if (_grade > 150)
-		throw Bureaucrat::GradeTooLowException("Too Low");
+	if (_grade < HIGHER_GRADE)
+		throw Bureaucrat::GradeTooHighException();
+	else if (_grade > LOWER_GRADE)
+		throw Bureaucrat::GradeTooLowException();
 	std::cout << "Bureaucrat Constructor Called" << std::endl;
 }
 Bureaucrat::Bureaucrat(const Bureaucrat &object) : _name(object.getName()), _grade(object.getGrade())
@@ -40,15 +40,15 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::increaseGrade()
 {
-	_grade = _grade - 1;
-	if (_grade < 1)
-		throw Bureaucrat::GradeTooHighException("Too High");
+	if (_grade <= HIGHER_GRADE)
+	throw Bureaucrat::GradeTooHighException();
+	_grade--;
 }
 void Bureaucrat::decreaseGrade()
 {
-	_grade = _grade + 1;
-	if (_grade > 150)
-		throw Bureaucrat::GradeTooLowException("Too Low");
+	if (_grade > LOWER_GRADE)
+	throw Bureaucrat::GradeTooLowException();
+	_grade++;
 }
 
 Bureaucrat::~Bureaucrat()

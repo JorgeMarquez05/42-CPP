@@ -6,9 +6,13 @@ int main()
 {
 	try
 	{
-		Bureaucrat a("Alisson", 150);
+		Bureaucrat a("Alisson", 1);
 		std::cout << a << std::endl;
-		a.decreaseGrade();
+		a.increaseGrade();
+		std::cout << a << std::endl;
+		a.increaseGrade();
+		std::cout << a << std::endl;
+		a.increaseGrade();
 		std::cout << a << std::endl;
 	}
 	catch (std::exception &e)

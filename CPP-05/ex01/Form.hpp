@@ -2,14 +2,16 @@
 
 class Form
 {
-private:
-    const std::string _name;
-    bool _signed;
-    const int _grade_to_sign;
-    const int _grade_to_execute;
+  private:
+	const std::string _name;
+	bool _signed;
+	const int _grade_to_sign;
+	const int _grade_to_execute;
 
-public:
-    Form();
+  public:
+	Form();
 };
 
-Form::Form(): _name("Form"), _signed(false), _grade_to_sign(50),_grade_to_execute(25) {}
+Form::Form() : _name("Form"), _signed(false), _grade_to_sign(50), _grade_to_execute(25)
+{
+}

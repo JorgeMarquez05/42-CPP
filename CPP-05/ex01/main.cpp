@@ -5,15 +5,21 @@
 
 int main()
 {
-	try
-	{
-	Form f("Tax Evasion", 15,150);
-	std::cout << f << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what();
-	}
+	Bureaucrat bob("Bob", 15);
+	Form f("Tax Evasion", 15, 150);
+	std::cout << f;
+
+	bob.signForm(f);
+	bob.signForm(f);
+	// try
+	// {
+	// Form f("Tax Evasion", 15,150);
+	// std::cout << f << std::endl;
+	// }
+	// catch (std::exception &e)
+	// {
+	// 	std::cout << e.what();
+	// }
 
 	return (0);
 }

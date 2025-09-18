@@ -1,5 +1,8 @@
 #pragma once
+#include "Form.hpp"
 #include <iostream>
+
+class Form;
 
 #define LOWER_GRADE 150
 #define HIGHER_GRADE 1
@@ -18,7 +21,6 @@ class Bureaucrat
 			return "Grade is too High";
 		};
 		~GradeTooHighException() throw(){};
-
 	};
 	class GradeTooLowException : public std::exception
 	{
@@ -26,10 +28,12 @@ class Bureaucrat
 		GradeTooLowException(){};
 		const char *what() const throw()
 		{
-			return "Grade is too Low";;
+			return "Grade is too Low";
+			;
 		};
 		~GradeTooLowException() throw(){};
 	};
+
 	Bureaucrat(const Bureaucrat &object);
 	Bureaucrat &operator=(const Bureaucrat &object);
 
@@ -40,7 +44,8 @@ class Bureaucrat
 	int getGrade() const;
 	void increaseGrade();
 	void decreaseGrade();
-	
+	void signForm(Form &form);
+
 	~Bureaucrat();
 };
 

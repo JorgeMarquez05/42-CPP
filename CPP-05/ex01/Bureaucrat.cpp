@@ -41,14 +41,27 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::increaseGrade()
 {
 	if (_grade <= HIGHER_GRADE)
-	throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException();
 	_grade--;
 }
 void Bureaucrat::decreaseGrade()
 {
 	if (_grade > LOWER_GRADE)
-	throw Bureaucrat::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	_grade++;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << getName() << " signed " << form.getName() <<  '\n';
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << getName() << " couldn’t sign " << form.getName() << " because " << e.what() << '\n';
+	}
 }
 
 Bureaucrat::~Bureaucrat()

@@ -41,13 +41,13 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::increaseGrade()
 {
 	if (_grade <= HIGHER_GRADE)
-	throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException();
 	_grade--;
 }
 void Bureaucrat::decreaseGrade()
 {
 	if (_grade > LOWER_GRADE)
-	throw Bureaucrat::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	_grade++;
 }
 

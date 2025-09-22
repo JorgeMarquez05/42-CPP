@@ -4,9 +4,9 @@ RESET 		= \033[0m
 CPP			= c++ 
 CPPFLAGS	= -std=c++98 -g -Wall -Wextra -Werror 
 OBJ_DIR		= objects/
-NAME		= form
+NAME		= intern
 
-FUNCTIONS = AForm Bureaucrat PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm main
+FUNCTIONS = AForm Bureaucrat Intern PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm main
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

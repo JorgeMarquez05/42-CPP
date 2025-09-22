@@ -6,7 +6,7 @@ CPPFLAGS	= -std=c++98 -g -Wall -Wextra -Werror
 OBJ_DIR		= objects/
 NAME		= form
 
-FUNCTIONS = main Bureaucrat Form
+FUNCTIONS = AForm Bureaucrat PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm main
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))
@@ -33,5 +33,5 @@ fclean: clean
 re: fclean all
 
 r: re
-	./$(NAME)
+	@./$(NAME)
 .PHONY: all clean fclean re

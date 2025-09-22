@@ -1,8 +1,8 @@
 #pragma once
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <iostream>
 
-class Form;
+class AForm;
 
 #define LOWER_GRADE 150
 #define HIGHER_GRADE 1
@@ -44,7 +44,7 @@ class Bureaucrat
 	int getGrade() const;
 	void increaseGrade();
 	void decreaseGrade();
-	void signForm(Form &form);
+	void signForm(AForm &form);
 
 	~Bureaucrat();
 };

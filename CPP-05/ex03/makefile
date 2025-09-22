@@ -4,9 +4,9 @@ RESET 		= \033[0m
 CPP			= c++ 
 CPPFLAGS	= -std=c++98 -g -Wall -Wextra -Werror 
 OBJ_DIR		= objects/
-NAME		= AMateria
+NAME		= form
 
-FUNCTIONS = main AMateria Character Cure Ice MateriaSource
+FUNCTIONS = AForm Bureaucrat PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm main
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))
@@ -32,4 +32,6 @@ fclean: clean
 
 re: fclean all
 
+r: re
+	@./$(NAME)
 .PHONY: all clean fclean re

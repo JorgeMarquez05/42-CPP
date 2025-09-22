@@ -4,7 +4,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
   private:
 	const std::string _name;
@@ -32,20 +32,33 @@ class Form
 		}
 		~GradeTooLowException() throw(){};
 	};
-
-	Form(const Form &object);
-	Form &operator=(const Form &object);
+	class FormNotSignedException : public std::exception
+	{
+	  public:
+		FormNotSignedException(){};
+		const char *what() const throw()
+		{
+			return ("Form isn't signed");
+		}
+		~FormNotSignedException() throw(){};
+	};
 
   public:
-	Form();
-	Form(std::string name, int grade_to_sign, int grade_to_execute);
-
-	std::string getName() const;
-	bool isSigned() const;
-	int getGradeToSign() const;
+  
+  std::string getName() const;
+  bool isSigned() const;
+  int getGradeToSign() const;
 	int getGradeToExecute() const;
 	void beSigned(Bureaucrat &bureaucrat);
-	~Form();
+	void execute(const Bureaucrat &executor) const;
+	virtual ~AForm();
+	
+	protected:
+	AForm();
+	AForm(std::string name, int grade_to_sign, int grade_to_execute);
+	AForm(const AForm &object);
+	AForm &operator=(const AForm &object);
+	virtual void executeAction() const = 0;
 };
 
-std::ostream &operator<<(std::ostream &os, Form &object);
+std::ostream &operator<<(std::ostream &os, const AForm &object);

@@ -4,9 +4,9 @@ RESET 		= \033[0m
 CPP			= c++ 
 CPPFLAGS	= -std=c++98 -g -Wall -Wextra #-Werror 
 OBJ_DIR		= objects/
-NAME		= intern
+NAME		= convert
 
-FUNCTIONS = AForm Bureaucrat Intern PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm main
+FUNCTIONS = ScalarConverter main
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))
@@ -33,5 +33,5 @@ fclean: clean
 re: fclean all
 
 r: re
-	@./$(NAME)
+	@./$(NAME) 0.0f
 .PHONY: all clean fclean re

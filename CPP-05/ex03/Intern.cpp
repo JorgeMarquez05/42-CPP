@@ -34,7 +34,7 @@ static int validForms(const std::string word)
 	{
 		if (word.compare(forms[i]) == 0)
 		{
-			std::cout << forms[i] << std::endl; // ! Debug
+			// std::cout << forms[i] << std::endl; // ! Debug
 			return (i);
 		}
 	}
@@ -64,15 +64,21 @@ AForm *Intern::makeForm(std::string const &formName, std::string target)
 	input >> word1 >> word2;
 
 	if (input.fail() || !input.eof())
-		std::cout << "Invalid Format: Expected 2 words";
+	{
+		std::cout << "Invalid Format: " << formName << " (Expected 2 words)"<< std::endl;
+		return (NULL);
+	}
 
 	word1 = wordToLowerCase(word1);
 	word2 = wordToLowerCase(word2);
 
 	int formNbr = validForms(word1);
 
-	if (word2 != "request" || formNbr == -1)
+	if ((word2 != "request" && word2 != "pardon" && word2 != "creation") || formNbr == -1)
+	{
 		std::cout << "Invalid Name of request, doesn't exist" << std::endl;
+		return (NULL);
+	}
 
 	return (newForm(formNbr, target));
 }

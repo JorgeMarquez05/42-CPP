@@ -9,14 +9,57 @@
 
 int main()
 {
-	Bureaucrat bob("Bob", 138);
 
-	Intern someInternRandom;
+	Intern someRandomIntern;
+	AForm *rrf;
+	AForm *pp;
+	AForm *shrubbery;
 
-	AForm *form = someInternRandom.makeForm("Robotomy Request", "Bender");
-	if (form)
-		std::cout << "Created form" << std::endl;
+	rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
+	pp = someRandomIntern.makeForm("Presidential Pardon", "Prison");
+	shrubbery = someRandomIntern.makeForm("Shrubbery Creation", "Garden");
 
+	std::cout << "\033[31m";
+	std::cout << "\n******************************************";
+	std::cout << "\n*********TESTING WRONG FORMS 1 **************";
+	std::cout << "\n******************************************\n"
+			  << std::endl;
+	std::cout << "\033[0m";
+
+	AForm *error;
+	AForm *error2;
+
+	error = someRandomIntern.makeForm("Empty", "Bender");
+	error2 = someRandomIntern.makeForm("presidential pardonn", "Bender");
+
+	std::cout << "\033[31m";
+	std::cout << "\n******************************************";
+	std::cout << "\n*********TESTING SIGNING FORMS 2 ************";
+	std::cout << "\n******************************************\n"
+			  << std::endl;
+	std::cout << "\033[0m";
+
+	Bureaucrat bob("Bob", 100);
+
+	try
+	{
+			bob.signForm(*rrf);
+			bob.signForm(*pp);
+			bob.signForm(*shrubbery);
+			shrubbery->execute(bob);
+		bob.signForm(*error);
+		bob.signForm(*error);
+	}
+	catch (std::exception &msg)
+	{
+		std::cout << "ERROR: " << msg.what() << std::endl;
+	}
+
+	delete rrf;
+	delete pp;
+	delete shrubbery;
+	delete error;
+	delete error2;
 
 	return (0);
 }

@@ -53,6 +53,11 @@ void Bureaucrat::decreaseGrade()
 
 void Bureaucrat::signForm(AForm &form)
 {
+	// if(!&form)
+	// {
+	// 	std::cout<< "Not even a form" << std::endl;
+	// 	return;
+	// }
 	try
 	{
 		form.beSigned(*this);

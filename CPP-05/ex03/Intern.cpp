@@ -66,7 +66,7 @@ AForm *Intern::makeForm(std::string const &formName, std::string target)
 	if (input.fail() || !input.eof())
 	{
 		std::cout << "Invalid Format: " << formName << " (Expected 2 words)" << std::endl;
-		return (NULL);
+		throw Intern::CannotCreateFormException();
 	}
 
 	word1 = wordToLowerCase(word1);
@@ -77,7 +77,7 @@ AForm *Intern::makeForm(std::string const &formName, std::string target)
 	if ((word2 != "request" && word2 != "pardon" && word2 != "creation") || formNbr == -1)
 	{
 		std::cout << "Invalid Name of request, doesn't exist" << std::endl;
-		return (NULL);
+		throw Intern::CannotCreateFormException();
 	}
 
 	return (newForm(formNbr, target));

@@ -9,7 +9,19 @@
 
 class Intern
 {
-  public:
+private:
+	class CannotCreateFormException : public std::exception
+	{
+	public:
+		CannotCreateFormException() {};
+		const char *what() const throw()
+		{
+			return ("Cannot Create a Form");
+		}
+		~CannotCreateFormException() throw() {};
+	};
+
+public:
 	Intern();
 	Intern(const Intern &other);
 	Intern &operator=(const Intern &other);

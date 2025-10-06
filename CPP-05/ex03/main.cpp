@@ -22,19 +22,36 @@ int main()
 	std::cout << "\033[31m";
 	std::cout << "\n******************************************";
 	std::cout << "\n*********TESTING WRONG FORMS 1 **************";
-	std::cout << "\n******************************************\n" << std::endl;
+	std::cout << "\n******************************************\n"
+			  << std::endl;
 	std::cout << "\033[0m";
 
 	AForm *error;
 	AForm *error2;
 
-	error = someRandomIntern.makeForm("Empty", "Bender");
-	error2 = someRandomIntern.makeForm("presidential pardonn", "Bender");
+	try
+	{
+		error = someRandomIntern.makeForm("Empty", "Bender");
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "ERROR: " << e.what() << std::endl;
+	}
+
+	try
+	{
+		error2 = someRandomIntern.makeForm("presidential pardonn", "Bender");
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "ERROR: " << e.what() << std::endl;
+	}
 
 	std::cout << "\033[31m";
 	std::cout << "\n******************************************";
 	std::cout << "\n*********TESTING SIGNING FORMS 2 ************";
-	std::cout << "\n******************************************\n" << std::endl;
+	std::cout << "\n******************************************\n"
+			  << std::endl;
 	std::cout << "\033[0m";
 
 	Bureaucrat bob("Bob", 100);
@@ -44,20 +61,51 @@ int main()
 		bob.signForm(*rrf);
 		bob.signForm(*pp);
 		bob.signForm(*shrubbery);
-		shrubbery->execute(bob);
-		bob.signForm(*error);
-		bob.signForm(*error);
 	}
-	catch (std::exception &msg)
+	catch (std::exception &e)
 	{
-		std::cout << "ERROR: " << msg.what() << std::endl;
+		std::cout << "ERROR: " << e.what() << std::endl;
+	}
+
+	std::cout << "\033[31m";
+	std::cout << "\n******************************************";
+	std::cout << "\n*********TESTING EXECUTING FORMS ************";
+	std::cout << "\n******************************************\n"
+			  << std::endl;
+	std::cout << "\033[0m";
+
+	try
+	{
+		shrubbery->execute(bob);
+		
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "ERROR: " << e.what() << std::endl;
+	}
+
+	
+	try
+	{
+		pp->execute(bob);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "ERROR: " << e.what() << std::endl;
+	}
+
+	try
+	{
+		rrf->execute(bob);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "ERROR: " << e.what() << std::endl;
 	}
 
 	delete rrf;
 	delete pp;
 	delete shrubbery;
-	delete error;
-	delete error2;
 
 	return (0);
 }

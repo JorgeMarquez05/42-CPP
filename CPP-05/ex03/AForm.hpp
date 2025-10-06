@@ -6,7 +6,7 @@ class Bureaucrat;
 
 class AForm
 {
-  private:
+private:
 	const std::string _name;
 	bool _signed;
 	const int _gradeToSign;
@@ -14,46 +14,46 @@ class AForm
 
 	class GradeTooHighException : public std::exception
 	{
-	  public:
-		GradeTooHighException(){};
+	public:
+		GradeTooHighException() {};
 		const char *what() const throw()
 		{
 			return ("Grade Too High");
 		}
-		~GradeTooHighException() throw(){};
+		~GradeTooHighException() throw() {};
 	};
 	class GradeTooLowException : public std::exception
 	{
-	  public:
-		GradeTooLowException(){};
+	public:
+		GradeTooLowException() {};
 		const char *what() const throw()
 		{
 			return ("Grade Too Low");
 		}
-		~GradeTooLowException() throw(){};
+		~GradeTooLowException() throw() {};
 	};
+
 	class FormNotSignedException : public std::exception
 	{
-	  public:
-		FormNotSignedException(){};
+	public:
+		FormNotSignedException() {};
 		const char *what() const throw()
 		{
 			return ("Form isn't signed");
 		}
-		~FormNotSignedException() throw(){};
+		~FormNotSignedException() throw() {};
 	};
 
-  public:
-  
-  std::string getName() const;
-  bool isSigned() const;
-  int getGradeToSign() const;
+public:
+	std::string getName() const;
+	bool isSigned() const;
+	int getGradeToSign() const;
 	int getGradeToExecute() const;
 	void beSigned(Bureaucrat &bureaucrat);
 	void execute(const Bureaucrat &executor) const;
 	virtual ~AForm();
-	
-	protected:
+
+protected:
 	AForm();
 	AForm(std::string name, int grade_to_sign, int grade_to_execute);
 	AForm(const AForm &object);

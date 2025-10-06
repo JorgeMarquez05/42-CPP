@@ -65,7 +65,7 @@ AForm *Intern::makeForm(std::string const &formName, std::string target)
 
 	if (input.fail() || !input.eof())
 	{
-		std::cout << "Invalid Format: " << formName << " (Expected 2 words)"<< std::endl;
+		std::cout << "Invalid Format: " << formName << " (Expected 2 words)" << std::endl;
 		return (NULL);
 	}
 

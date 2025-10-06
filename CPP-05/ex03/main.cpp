@@ -22,8 +22,7 @@ int main()
 	std::cout << "\033[31m";
 	std::cout << "\n******************************************";
 	std::cout << "\n*********TESTING WRONG FORMS 1 **************";
-	std::cout << "\n******************************************\n"
-			  << std::endl;
+	std::cout << "\n******************************************\n" << std::endl;
 	std::cout << "\033[0m";
 
 	AForm *error;
@@ -35,18 +34,17 @@ int main()
 	std::cout << "\033[31m";
 	std::cout << "\n******************************************";
 	std::cout << "\n*********TESTING SIGNING FORMS 2 ************";
-	std::cout << "\n******************************************\n"
-			  << std::endl;
+	std::cout << "\n******************************************\n" << std::endl;
 	std::cout << "\033[0m";
 
 	Bureaucrat bob("Bob", 100);
 
 	try
 	{
-			bob.signForm(*rrf);
-			bob.signForm(*pp);
-			bob.signForm(*shrubbery);
-			shrubbery->execute(bob);
+		bob.signForm(*rrf);
+		bob.signForm(*pp);
+		bob.signForm(*shrubbery);
+		shrubbery->execute(bob);
 		bob.signForm(*error);
 		bob.signForm(*error);
 	}

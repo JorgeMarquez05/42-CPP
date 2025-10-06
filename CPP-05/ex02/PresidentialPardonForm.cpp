@@ -27,7 +27,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 std::string PresidentialPardonForm::getTarget() const
 {
-	return(_target);
+	return (_target);
 }
 
 void PresidentialPardonForm::executeAction() const

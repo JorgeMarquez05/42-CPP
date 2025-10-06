@@ -9,8 +9,7 @@
 int main()
 {
 
-	std::cout << "\n*********CREATING FORMS AND BUREAUCRAT**********\n"
-			  << std::endl;
+	std::cout << "\n*********CREATING FORMS AND BUREAUCRAT**********\n" << std::endl;
 
 	ShrubberyCreationForm shrubbery("house");
 	RobotomyRequestForm robot("human");
@@ -26,13 +25,12 @@ int main()
 	std::cout << "\n***************************************\n";
 	std::cout << "\033[0m";
 
-	std::cout << "\n*********TRY EXECUTE SHRUBERRY WITHOUT SIGNING**********\n"
-			  << std::endl;
+	std::cout << "\n*********TRY EXECUTE SHRUBERRY WITHOUT SIGNING**********\n" << std::endl;
 	try
 	{
 		std::cout << "Form name: " << shrubbery.getName() << " | Target: " << shrubbery.getTarget()
-				  << " | Sign grade: " << shrubbery.getGradeToSign()
-				  << " | Execute grade: " << shrubbery.getGradeToExecute() << std::endl;
+		          << " | Sign grade: " << shrubbery.getGradeToSign()
+		          << " | Execute grade: " << shrubbery.getGradeToExecute() << std::endl;
 		shrubbery.execute(bob);
 	}
 	catch (std::exception &e)
@@ -41,8 +39,7 @@ int main()
 	}
 
 	std::cout << "\033[32m";
-	std::cout << "\n*********TRY EXECUTE SHRUBERRY WITHOUT ENOUGH GRADE**********\n"
-			  << std::endl;
+	std::cout << "\n*********TRY EXECUTE SHRUBERRY WITHOUT ENOUGH GRADE**********\n" << std::endl;
 	std::cout << "\033[0m";
 
 	try
@@ -56,8 +53,7 @@ int main()
 	}
 
 	std::cout << "\033[32m";
-	std::cout << "\n*********TRY EXECUTE SHRUBERRY**********\n"
-			  << std::endl;
+	std::cout << "\n*********TRY EXECUTE SHRUBERRY**********\n" << std::endl;
 	std::cout << "\033[0m";
 	try
 	{
@@ -75,16 +71,15 @@ int main()
 	std::cout << "\n***************************************\n";
 	std::cout << "\033[0m";
 	std::cout << "\033[32m";
-	std::cout << "\n*********TRY EXECUTE ROBOT WITHOUT SIGNING**********\n"
-			  << std::endl;
+	std::cout << "\n*********TRY EXECUTE ROBOT WITHOUT SIGNING**********\n" << std::endl;
 	std::cout << "\033[0m";
 
 	try
 	{
 
 		std::cout << "Form name: " << robot.getName() << " | Target: " << robot.getTarget()
-				  << " | Sign grade: " << robot.getGradeToSign() << " | Execute grade: " << robot.getGradeToExecute()
-				  << std::endl;
+		          << " | Sign grade: " << robot.getGradeToSign() << " | Execute grade: " << robot.getGradeToExecute()
+		          << std::endl;
 		robot.execute(bob);
 	}
 	catch (std::exception &e)
@@ -93,8 +88,7 @@ int main()
 	}
 
 	std::cout << "\033[32m";
-	std::cout << "\n*********TRY EXECUTE ROBOT WITHOUT ENOUGH GRADE**********\n"
-			  << std::endl;
+	std::cout << "\n*********TRY EXECUTE ROBOT WITHOUT ENOUGH GRADE**********\n" << std::endl;
 	std::cout << "\033[0m";
 
 	try
@@ -131,13 +125,16 @@ int main()
 	std::cout << "\n*********TRY EXECUTE PRESIDENTIAL PARDON WITHOUT SIGNING**********\n" << std::endl;
 	std::cout << "\033[0m";
 
-	try {
+	try
+	{
 
 		std::cout << "Form name: " << pardon.getName() << " | Target: " << pardon.getTarget()
 		          << " | Sign grade: " << pardon.getGradeToSign() << " | Execute grade: " << pardon.getGradeToExecute()
 		          << std::endl;
 		pardon.execute(bob);
-	} catch (std::exception &msg) {
+	}
+	catch (std::exception &msg)
+	{
 		std::cout << "Error: " << msg.what() << std::endl;
 	}
 
@@ -145,10 +142,13 @@ int main()
 	std::cout << "\n*********TRY EXECUTE PRESIDENTIAL PARDON**********\n" << std::endl;
 	std::cout << "\033[0m";
 
-	try {
+	try
+	{
 		president.signForm(pardon);
 		pardon.execute(president);
-	} catch (std::exception &msg) {
+	}
+	catch (std::exception &msg)
+	{
 		std::cout << "Error: " << msg.what() << std::endl;
 	}
 
@@ -156,10 +156,13 @@ int main()
 	std::cout << "\n*********TRY EXECUTE PRESIDENTIAL PARDON WITHOUT ENOUGH GRADE**********\n" << std::endl;
 	std::cout << "\033[0m";
 
-	try {
+	try
+	{
 		worker.signForm(pardon);
 		pardon.execute(worker);
-	} catch (std::exception &msg) {
+	}
+	catch (std::exception &msg)
+	{
 		std::cout << "Error: " << msg.what() << std::endl;
 	}
 

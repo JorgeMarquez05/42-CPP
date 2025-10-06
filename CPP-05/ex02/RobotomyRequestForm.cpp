@@ -25,7 +25,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 std::string RobotomyRequestForm::getTarget() const
 {
-	return(_target);
+	return (_target);
 }
 
 void RobotomyRequestForm::executeAction() const

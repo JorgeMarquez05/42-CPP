@@ -46,7 +46,7 @@ void Bureaucrat::increaseGrade()
 }
 void Bureaucrat::decreaseGrade()
 {
-	if (_grade > LOWER_GRADE)
+	if (_grade >= LOWER_GRADE)
 		throw Bureaucrat::GradeTooLowException();
 	_grade++;
 }

@@ -26,7 +26,6 @@ class Bureaucrat
 		const char *what() const throw()
 		{
 			return "Grade is too Low";
-			;
 		};
 		~GradeTooLowException() throw(){};
 	};

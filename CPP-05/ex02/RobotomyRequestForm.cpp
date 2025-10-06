@@ -22,6 +22,12 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
+
+std::string RobotomyRequestForm::getTarget() const
+{
+	return(_target);
+}
+
 void RobotomyRequestForm::executeAction() const
 {
 	std::srand(time(0));

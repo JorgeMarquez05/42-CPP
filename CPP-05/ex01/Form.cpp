@@ -19,10 +19,7 @@ std::string Form::getName() const
 
 bool Form::isSigned() const
 {
-	if (_signed)
-		return ("Signed");
-	else
-		return ("Unsigned");
+	return(_signed);
 }
 
 int Form::getGradeToSign() const

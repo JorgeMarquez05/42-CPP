@@ -4,7 +4,7 @@ void ScalarConverter::convert(std::string input)
 {
 	if (!ScalarConverter::validateInput(input))
 	{
-		std::cout << "Not valid format, try on this formats [0; 0.0; 0.0f]";
+		std::cout << "Not valid format, try on this formats [0; 0.0; 0.0f; 'a']";
 		return;
 	}
 
@@ -21,7 +21,7 @@ void ScalarConverter::convert(std::string input)
 bool ScalarConverter::validateInput(std::string input)
 {
 	if (input == "nan" || input == "nanf" || input == "+inf" || input == "-inf" || input == "+inff" ||
-	    input == "-inff" || input == "inf" || input == "inff")
+		input == "-inff" || input == "inf" || input == "inff")
 		return (true);
 
 	char *end;
@@ -35,7 +35,7 @@ bool ScalarConverter::validateInput(std::string input)
 bool ScalarConverter::isSpecialCases(std::string input)
 {
 	if (input == "nan" || input == "nanf" || input == "+inf" || input == "-inf" || input == "+inff" ||
-	    input == "-inff" || input == "inf" || input == "inff")
+		input == "-inff" || input == "inf" || input == "inff")
 		return (true);
 
 	return (false);
@@ -89,8 +89,7 @@ bool ScalarConverter::convertToInt(double nbr, int &n)
 }
 bool ScalarConverter::convertToFloat(double nbr, float &f)
 {
-
-	if (nbr < std::numeric_limits<float>::min() || nbr > std::numeric_limits<float>::max())
+	if ((nbr < std::numeric_limits<float>::min() || nbr > std::numeric_limits<float>::max()) && nbr != 0)
 		return (false);
 
 	f = static_cast<float>(nbr);

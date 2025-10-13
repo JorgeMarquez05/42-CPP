@@ -4,7 +4,7 @@ RESET 		= \033[0m
 CPP			= c++ 
 CPPFLAGS	= -std=c++98 -g -Wall -Wextra -Werror 
 OBJ_DIR		= objects/
-NAME		= intern
+NAME		= serializer
 
 FUNCTIONS = main Serializer
 

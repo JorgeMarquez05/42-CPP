@@ -2,11 +2,11 @@ GREEN 		= \033[1;32m
 RESET 		= \033[0m
 
 CPP			= c++ 
-CPPFLAGS	= -std=c++98 -g -Wall -Wextra -Werror 
+CPPFLAGS	= -std=c++98 -g -Wall -Wextra #-Werror 
 OBJ_DIR		= objects/
-NAME		= 
+NAME		= realtype
 
-FUNCTIONS = A B Base C main
+FUNCTIONS = Base main
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

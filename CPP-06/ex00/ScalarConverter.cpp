@@ -4,7 +4,7 @@ void ScalarConverter::convert(std::string input)
 {
 	if (!ScalarConverter::validateInput(input))
 	{
-		std::cout << "Not valid format, try on this formats [0; 0.0; 0.0f; 'a']";
+		std::cout << "Not valid format, try on this formats [0; 0.0; 0.0f; \"'a'\"]";
 		return;
 	}
 	if (ScalarConverter::isCharCase(input))

@@ -5,5 +5,4 @@ struct Data
 {
     std::string _name;
     int _value;
-
 };

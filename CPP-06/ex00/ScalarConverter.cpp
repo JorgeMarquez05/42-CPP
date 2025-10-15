@@ -7,7 +7,12 @@ void ScalarConverter::convert(std::string input)
 		std::cout << "Not valid format, try on this formats [0; 0.0; 0.0f; 'a']";
 		return;
 	}
-
+	if (ScalarConverter::isCharCase(input))
+	{
+		double nbr = static_cast<int>(input[1]);
+		ScalarConverter::printTable(nbr);
+		return;
+	}
 	if (ScalarConverter::isSpecialCases(input))
 	{
 		ScalarConverter::printSpecialCases(input);
@@ -29,9 +34,18 @@ bool ScalarConverter::validateInput(std::string input)
 
 	if ((*end == 'f' && *(end + 1) == '\0') || *end == '\0')
 		return (true);
+	else if (input.length() == 3 && input.find("'", 0) == 0 && input.rfind("'", input.length()) == 2)
+		return (true);
 
 	return (false);
 }
+bool ScalarConverter::isCharCase(std::string input)
+{
+	if (input.length() == 3 && input.find("'", 0) == 0 && input.rfind("'", input.length()) == 2)
+		return (true);
+	return (false);
+}
+
 bool ScalarConverter::isSpecialCases(std::string input)
 {
 	if (input == "nan" || input == "nanf" || input == "+inf" || input == "-inf" || input == "+inff" ||

@@ -9,9 +9,10 @@
 
 class ScalarConverter
 {
-  private:
+private:
 	static bool validateInput(std::string input);
 	static bool isSpecialCases(std::string input);
+	static bool isCharCase(std::string input);
 	static bool convertToChar(double nbr, char &c);
 	static bool convertToInt(double nbr, int &n);
 	static bool convertToFloat(double nbr, float &f);
@@ -21,6 +22,6 @@ class ScalarConverter
 	static void printInt(double nbr);
 	static void printFloat(double nbr);
 
-  public:
+public:
 	static void convert(std::string input);
 };

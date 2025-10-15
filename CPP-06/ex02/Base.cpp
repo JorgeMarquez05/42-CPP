@@ -1,4 +1,5 @@
 #include "Base.hpp"
+#include <unistd.h>
 
 Base::Base()
 {
@@ -10,15 +11,29 @@ Base::~Base()
 
 Base *generate(void)
 {
-    // time_t time = std::time(NULL);
-    // std::srand(time);
+    static bool seeded = false;
 
-    // std::cout << "time: " << time << std::endl;
+    if (!seeded)
+    {
+        time_t time = std::time(NULL);
+        std::srand(time);
+        seeded = true;
+    }
 
-    // int idx = std::rand() % 6;
+    int idx = std::rand() % 3;
 
-    // std::cout << "idx " << idx % 3 << std::endl;
-    return (NULL);
+    switch (idx)
+    {
+    case a:
+        return (new A);
+    case b:
+        return (new B);
+    case c:
+        return (new C);
+
+    default:
+        return (NULL);
+    }
 }
 
 void identify(Base *p)

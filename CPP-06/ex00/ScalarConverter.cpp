@@ -1,5 +1,20 @@
 #include "ScalarConverter.hpp"
 
+ScalarConverter::ScalarConverter()
+{
+}
+ScalarConverter::ScalarConverter(const ScalarConverter &other)
+{
+	(void)other;
+}
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
+{
+	
+	if(this != &other)
+	{}
+	return(*this);
+}
+
 void ScalarConverter::convert(std::string input)
 {
 	if (!ScalarConverter::validateInput(input))
@@ -26,7 +41,7 @@ void ScalarConverter::convert(std::string input)
 bool ScalarConverter::validateInput(std::string input)
 {
 	if (input == "nan" || input == "nanf" || input == "+inf" || input == "-inf" || input == "+inff" ||
-		input == "-inff" || input == "inf" || input == "inff")
+	    input == "-inff" || input == "inf" || input == "inff")
 		return (true);
 
 	char *end;
@@ -49,7 +64,7 @@ bool ScalarConverter::isCharCase(std::string input)
 bool ScalarConverter::isSpecialCases(std::string input)
 {
 	if (input == "nan" || input == "nanf" || input == "+inf" || input == "-inf" || input == "+inff" ||
-		input == "-inff" || input == "inf" || input == "inff")
+	    input == "-inff" || input == "inf" || input == "inff")
 		return (true);
 
 	return (false);

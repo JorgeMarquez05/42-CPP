@@ -10,6 +10,10 @@
 class ScalarConverter
 {
 private:
+	ScalarConverter();
+	ScalarConverter(const ScalarConverter &other);
+	ScalarConverter& operator=(const ScalarConverter &other);
+
 	static bool validateInput(std::string input);
 	static bool isSpecialCases(std::string input);
 	static bool isCharCase(std::string input);

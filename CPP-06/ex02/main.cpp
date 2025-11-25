@@ -39,4 +39,7 @@ int main()
     // identify(*p);
     // identify(*p1);
     // identify(*p2);
+    delete p;
+    delete p1;
+    delete p2;
 }

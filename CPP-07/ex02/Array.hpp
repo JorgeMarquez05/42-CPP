@@ -19,7 +19,6 @@ class Array
 		~OutBorderException() throw() {};
 	};
 
-	
 	Array()
 	{
 		_size = 5;
@@ -30,12 +29,12 @@ class Array
 		_size = n;
 		_elements = new T[_size];
 	}
-	Array(const Array &other) : _size(other->_size)
+	Array(const Array &other) : _size(other._size)
 	{
 		_elements = new T[_size];
 		for (unsigned int i = 0; i < _size; ++i)
 		{
-			_elements[i] = other->_elements[i];
+			_elements[i] = other._elements[i];
 		}
 	}
 	Array &operator=(const Array &other)
@@ -45,18 +44,19 @@ class Array
 			_size = other._size;
 			_elements = new T[_size];
 			for (unsigned int i = 0; i < _size; ++i)
-			{-
-				_elements[i] = other->_elements[i];
+			{
+				-_elements[i] = other->_elements[i];
 			}
 		}
 		return (*this);
 	}
-	T operator[](const unsigned int idx)
+	T &operator[](const unsigned int idx)
 	{
 		if (idx >= _size || idx < 0)
 			throw Array::OutBorderException();
 		return (_elements[idx]);
 	}
+
 	unsigned int size() const
 	{
 		return (_size);

@@ -19,6 +19,7 @@ class Array
 		~OutBorderException() throw() {};
 	};
 
+	
 	Array()
 	{
 		_size = 5;
@@ -44,7 +45,7 @@ class Array
 			_size = other._size;
 			_elements = new T[_size];
 			for (unsigned int i = 0; i < _size; ++i)
-			{
+			{-
 				_elements[i] = other->_elements[i];
 			}
 		}

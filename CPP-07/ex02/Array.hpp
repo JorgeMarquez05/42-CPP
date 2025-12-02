@@ -39,13 +39,15 @@ class Array
 	}
 	Array &operator=(const Array &other)
 	{
-		if (this != other)
+		if (this != &other)
 		{
+			delete[] _elements;
+
 			_size = other._size;
 			_elements = new T[_size];
 			for (unsigned int i = 0; i < _size; ++i)
 			{
-				-_elements[i] = other->_elements[i];
+				_elements[i] = other._elements[i];
 			}
 		}
 		return (*this);

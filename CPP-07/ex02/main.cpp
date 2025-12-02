@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 #include <time.h>
+#define MAX_VAL 750
+
 // int main(void)
 // {
 // 	// int *a = new int[2];
@@ -18,7 +20,14 @@
 //     return(0);
 // }
 
-#define MAX_VAL 750
+// int main(void)
+// {
+// 	Array<int> numbers(MAX_VAL);
+// 	Array<int> numbers2;
+
+// 	numbers2 = numbers;
+// }
+
 int main(int, char **)
 {
 	Array<int> numbers(MAX_VAL);
@@ -66,7 +75,7 @@ int main(int, char **)
 		numbers[i] = rand();
 		std::cout << numbers[i] << std::endl;
 	}
-    std::cout << "numbers.size(): "<< numbers.size() << std::endl;
+	std::cout << "numbers.size(): " << numbers.size() << std::endl;
 	delete[] mirror; //
 	return 0;
 }

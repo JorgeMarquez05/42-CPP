@@ -1,14 +1,31 @@
 
 #include <iostream>
 #include <vector>
-#include <map>
+#include "easyfind.hpp"
 
 int main(void)
 {
-    std::map<int,int> test;
+	std::vector<int> test;
 
-    if(test.find(0))
-    {
-        std::cout << "Finded" << std::endl;
-    }
+	test.push_back(4);
+	test.push_back(3);
+	test.push_back(2);
+	test.push_back(1);
+
+	try{
+
+		easyfind(test, 4);
+	}
+	catch(std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+
+	try{
+
+		easyfind(test, 9);
+	}
+	catch(std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+
 }

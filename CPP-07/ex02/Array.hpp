@@ -59,6 +59,13 @@ class Array
 		return (_elements[idx]);
 	}
 
+	const T &operator[](const unsigned int idx) const 
+	{
+		if (idx >= _size || idx < 0)
+			throw Array::OutBorderException();
+		return (_elements[idx]);
+	}
+
 	unsigned int size() const
 	{
 		return (_size);

@@ -6,7 +6,7 @@ CPPFLAGS	= -std=c++98 -g -Wall -Wextra -Werror
 OBJ_DIR		= objects/
 NAME		= rpn
 
-FUNCTIONS = main
+FUNCTIONS = main RPN
 
 SRC_FILES	= $(FUNCTIONS:=.cpp)
 OBJ_FILES 	= $(addprefix $(OBJ_DIR), $(FUNCTIONS:=.o))

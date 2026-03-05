@@ -32,7 +32,7 @@ int split(RPN &polish, std::string arguments, const char separator)
 		else
 			polish.addNumber(actualParameter[0] - 48);
 
-		polish.makeOperation();
+		// polish.makeOperation();
 		arguments = arguments.substr(pos + 1);
 		pos = arguments.find(separator);
 	}

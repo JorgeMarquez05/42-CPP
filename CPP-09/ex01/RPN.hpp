@@ -9,7 +9,7 @@ class RPN
 	std::stack<char> _operators;
 	void makeSum();
 	void makeMultiplication();
-	void makeDivision();
+	int makeDivision();
 	void makeSubtracion();
 
   public:

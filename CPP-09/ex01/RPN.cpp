@@ -25,7 +25,10 @@ void RPN::makeOperation()
 	if (_operators.top() == '-')
 		makeSubtracion();
 	if (_operators.top() == '/')
-		makeDivision();
+	{
+		if (makeDivision())
+			return;
+	}
 	if (_operators.top() == '*')
 		makeMultiplication();
 
@@ -45,35 +48,43 @@ void RPN::makeSum()
 }
 void RPN::makeMultiplication()
 {
-    int nbr1 = _numbers.top();
+	int nbr1 = _numbers.top();
 	_numbers.pop();
 	int nbr2 = _numbers.top();
 	_numbers.pop();
-    
+
 	int finalNbr = nbr2 * nbr1;
-    std::cout << "Operation: " << nbr2 << " * " << nbr1 << std::endl;
+	std::cout << "Operation: " << nbr2 << " * " << nbr1 << std::endl;
 	_numbers.push(finalNbr);
 }
-void RPN::makeDivision()
+int RPN::makeDivision()
 {
-    int nbr1 = _numbers.top();
+	int nbr1 = _numbers.top();
 	_numbers.pop();
 	int nbr2 = _numbers.top();
 	_numbers.pop();
-    
+
+	if (nbr1 == 0)
+	{
+		std::cerr << "Error" << std::endl;
+		for (size_t i = 0; i < _operators.size(); ++i)
+			_operators.pop();
+		return -1;
+	}
 	int finalNbr = nbr2 / nbr1;
-    std::cout << "Operation: " << nbr2 << " / " << nbr1 << std::endl;
+	std::cout << "Operation: " << nbr2 << " / " << nbr1 << std::endl;
 	_numbers.push(finalNbr);
+	return (0);
 }
 void RPN::makeSubtracion()
 {
-    int nbr1 = _numbers.top();
+	int nbr1 = _numbers.top();
 	_numbers.pop();
 	int nbr2 = _numbers.top();
 	_numbers.pop();
-    
+
 	int finalNbr = nbr2 - nbr1;
-    std::cout << "Operation: " << nbr2 << " - " << nbr1 << std::endl;
+	std::cout << "Operation: " << nbr2 << " - " << nbr1 << std::endl;
 	_numbers.push(finalNbr);
 }
 

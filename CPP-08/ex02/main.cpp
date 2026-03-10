@@ -1,8 +1,11 @@
 #include "MutantStack.hpp"
 #include <iostream>
+#include <list>
 
 void subjectTest(MutantStack<int> &mstack)
 {
+	std::cout << "-----------Mutant Stack Test---------------- " << std::endl;
+
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << mstack.top() << std::endl;
@@ -22,7 +25,41 @@ void subjectTest(MutantStack<int> &mstack)
 		++it;
 	}
 	std::stack<int> s(mstack);
+	std::cout << "---------------------------------------- " << std::endl;
 }
+void listTest(std::list<int> &testList)
+{
+	std::cout << "-----------List Test---------------- " << std::endl;
+
+	testList.push_back(5);
+	testList.push_back(17);
+
+	std::cout << testList.back() << std::endl;
+
+	testList.pop_back();
+
+	std::cout << testList.size() << std::endl;
+
+	testList.push_back(3);
+	testList.push_back(5);
+	testList.push_back(737);
+	testList.push_back(0);
+
+	std::list<int>::iterator it = testList.begin();
+	std::list<int>::iterator ite = testList.end();
+
+	++it;
+	--it;
+
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+
+	std::cout << "---------------------------------------- " << std::endl;
+}
+
 void iterationTest(MutantStack<int> &mstack)
 {
 	std::cout << "\n== Iterate from begin to end ==" << std::endl;
@@ -36,6 +73,9 @@ void iterationTest(MutantStack<int> &mstack)
 int main()
 {
 	MutantStack<int> mstack;
+	std::list<int> list;
 	subjectTest(mstack);
+	listTest(list);
+	iterationTest(mstack);
 	return 0;
 }

@@ -14,7 +14,8 @@ int main(void)
 
 	try{
 
-		easyfind(test, 4);
+		std::vector<int>::iterator it = easyfind(test, 4);
+		std::cout << *it << std::endl;
 	}
 	catch(std::exception &e){
 		std::cout << e.what() << std::endl;
@@ -22,7 +23,8 @@ int main(void)
 
 	try{
 
-		easyfind(test, 9);
+		std::vector<int>::iterator it = easyfind(test, 9);
+		std::cout << *it << std::endl;
 	}
 	catch(std::exception &e){
 		std::cout << e.what() << std::endl;

@@ -1,22 +1,24 @@
 #pragma once
+#include <exception>
 #include <iostream>
+#include <sstream>
 #include <stack>
 
-class RPN
-{
+class RPN {
   private:
 	std::stack<int> _numbers;
-	std::stack<char> _operators;
 	void makeSum();
 	void makeMultiplication();
-	int makeDivision();
-	void makeSubtracion();
+	bool makeDivision();
+	void makeSubtraction();
+	void addNumber(int nbr);
+	bool makeOperation(char validOperator);
+	bool isOperator(char parameter);
+	RPN(const RPN &other);
+	RPN &operator=(const RPN &other);
 
   public:
 	RPN();
-	void addNumber(int nbr);
-	void addOperator(char ValidOperator);
-	void makeOperation();
-    int  finalResult();
+	void calculate(std::string arguments);
 	~RPN();
 };

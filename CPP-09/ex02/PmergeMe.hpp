@@ -16,6 +16,8 @@ class PmergeMe {
 		unsigned long loser;
 	};
 	unsigned long getJacobsthal(int k);
+	void printVector();
+	void printDeque();
 
 	void mergeInsertionVector(std::vector<unsigned long> &c);
 	void binaryInsertionVector(std::vector<unsigned long> &mainChain, unsigned long element, int upper_bound);

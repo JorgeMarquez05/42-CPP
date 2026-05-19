@@ -1,5 +1,6 @@
 #include "PmergeMe.hpp"
 #include <ctime>
+#include <algorithm>
 
 PmergeMe::PmergeMe() {
 }
@@ -60,6 +61,11 @@ void PmergeMe::insertNumbers(int argc, char *argv[]) {
 		if (parseToNumber(argv[idx], nbr)) {
 			throw std::exception();
 		}
+		if (std::find(v_numbers.begin(), v_numbers.end(), nbr) != v_numbers.end()) {
+			std::cerr << "Error: Duplicate number found => " << nbr << std::endl;
+			throw std::exception();
+		}
+
 		v_numbers.push_back(nbr);
 		d_numbers.push_back(nbr);
 	}
@@ -72,12 +78,12 @@ void PmergeMe::sort() {
 	printContainer(d_numbers);
 
 	std::clock_t start_v = std::clock();
-	mergeInsertion<std::vector<unsigned long>, std::vector<Pair>>(v_numbers);
+	mergeInsertion<std::vector<unsigned long>, std::vector<Pair> >(v_numbers);
 	std::clock_t end_v = std::clock();
 	double time_v = static_cast<double>(end_v - start_v) / CLOCKS_PER_SEC * 1000000.0;
 
 	std::clock_t start_d = std::clock();
-	mergeInsertion<std::deque<unsigned long>, std::deque<Pair>>(d_numbers);
+	mergeInsertion<std::deque<unsigned long>, std::deque<Pair> >(d_numbers);
 	std::clock_t end_d = std::clock();
 	double time_d = static_cast<double>(end_d - start_d) / CLOCKS_PER_SEC * 1000000.0;
 

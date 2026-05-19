@@ -7,8 +7,12 @@ int main(int argc, char *argv[]) {
 	}
 
 	PmergeMe algo;
-	algo.insertNumbers(argc, argv);
-	algo.sort();
+	try {
+		algo.insertNumbers(argc, argv);
+		algo.sort();
+	} catch (const std::exception &e) {
+		return -1;
+	}
 
 	return (0);
 }

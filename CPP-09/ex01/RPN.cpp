@@ -12,35 +12,43 @@ void RPN::addNumber(int nbr) {
 
 bool RPN::makeOperation(char validOperator) {
 	if (_numbers.size() < 2)
-		return true;
+		return false;
 	if (validOperator == '+')
-		makeSum();
+		return (makeSum());
 	if (validOperator == '-')
-		makeSubtraction();
+		return (makeSubtraction());
 	if (validOperator == '/')
 		return (makeDivision());
 	if (validOperator == '*')
-		makeMultiplication();
+		return (makeMultiplication());
 	return (true);
 }
 
-void RPN::makeSum() {
+bool RPN::makeSum() {
 	int nbr1 = _numbers.top();
 	_numbers.pop();
 	int nbr2 = _numbers.top();
 	_numbers.pop();
 
-	int finalNbr = nbr2 + nbr1;
-	_numbers.push(finalNbr);
+	long long res = static_cast<long long>(nbr2) + nbr1;
+	if (res > 2147483647 || res < -2147483648)
+		return (false);
+
+	_numbers.push(static_cast<int>(res));
+	return true;
 }
-void RPN::makeMultiplication() {
+bool RPN::makeMultiplication() {
 	int nbr1 = _numbers.top();
 	_numbers.pop();
 	int nbr2 = _numbers.top();
 	_numbers.pop();
 
-	int finalNbr = nbr2 * nbr1;
-	_numbers.push(finalNbr);
+	long long res = static_cast<long long>(nbr2) * nbr1;
+	if (res > 2147483647 || res < -2147483648)
+		return (false);
+
+	_numbers.push(static_cast<int>(res));
+	return true;
 }
 bool RPN::makeDivision() {
 	int nbr1 = _numbers.top();
@@ -51,18 +59,25 @@ bool RPN::makeDivision() {
 	if (nbr1 == 0)
 		return (false);
 
-	int finalNbr = nbr2 / nbr1;
-	_numbers.push(finalNbr);
+	long long res = static_cast<long long>(nbr2) / nbr1;
+	if (res > 2147483647 || res < -2147483648)
+		return (false);
+
+	_numbers.push(static_cast<int>(res));
 	return (true);
 }
-void RPN::makeSubtraction() {
+bool RPN::makeSubtraction() {
 	int nbr1 = _numbers.top();
 	_numbers.pop();
 	int nbr2 = _numbers.top();
 	_numbers.pop();
 
-	int finalNbr = nbr2 - nbr1;
-	_numbers.push(finalNbr);
+	long long res = static_cast<long long>(nbr2) - nbr1;
+	if (res > 2147483647 || res < -2147483648)
+		return (false);
+
+	_numbers.push(static_cast<int>(res));
+	return true;
 }
 
 bool RPN::isOperator(char c) {

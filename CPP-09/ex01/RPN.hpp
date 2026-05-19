@@ -7,10 +7,12 @@
 class RPN {
   private:
 	std::stack<int> _numbers;
-	void makeSum();
-	void makeMultiplication();
+
+	bool makeSum();
+	bool makeMultiplication();
 	bool makeDivision();
-	void makeSubtraction();
+	bool makeSubtraction();
+
 	void addNumber(int nbr);
 	bool makeOperation(char validOperator);
 	bool isOperator(char parameter);

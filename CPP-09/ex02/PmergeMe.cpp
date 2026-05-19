@@ -66,15 +66,15 @@ void PmergeMe::insertNumbers(int argc, char *argv[]) {
 }
 
 void PmergeMe::printVector() {
-	for (std::vector<int>::size_type i = 0; i < v_numbers.size(); ++i) {
+	for (std::vector<unsigned long>::size_type i = 0; i < v_numbers.size(); ++i) {
 		std::cout << v_numbers[i] << " ";
 	}
 	std::cout << std::endl;
 }
 void PmergeMe::printDeque() {
 
-	for (std::deque<int>::size_type i = 0; i < v_numbers.size(); ++i) {
-		std::cout << v_numbers[i] << " ";
+	for (std::deque<unsigned long>::size_type i = 0; i < d_numbers.size(); ++i) {
+		std::cout << d_numbers[i] << " ";
 	}
 	std::cout << std::endl;
 }

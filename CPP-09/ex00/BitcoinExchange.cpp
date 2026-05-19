@@ -1,28 +1,22 @@
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange()
-{
+BitcoinExchange::BitcoinExchange() {
 }
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &other)
-{
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) {
 	_database = other._database;
 }
 
-BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
-{
-	if (this != &other)
-	{
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) {
+	if (this != &other) {
 		_database = other._database;
 	}
 	return *this;
 }
 
-BitcoinExchange::~BitcoinExchange()
-{
+BitcoinExchange::~BitcoinExchange() {
 }
 
-void BitcoinExchange::loadDatabase(const std::string &filename)
-{
+void BitcoinExchange::loadDatabase(const std::string &filename) {
 	std::ifstream file(filename.c_str());
 	if (!file.is_open())
 		throw std::runtime_error("Error: could not open database");
@@ -30,8 +24,7 @@ void BitcoinExchange::loadDatabase(const std::string &filename)
 	std::string line;
 	std::getline(file, line);
 
-	while (std::getline(file, line))
-	{
+	while (std::getline(file, line)) {
 		size_t comma = line.find(',');
 		if (comma == std::string::npos)
 			continue;
@@ -42,27 +35,23 @@ void BitcoinExchange::loadDatabase(const std::string &filename)
 	}
 }
 
-void BitcoinExchange::processInput(const std::string &filename)
-{
+void BitcoinExchange::processInput(const std::string &filename) {
 	std::ifstream file(filename.c_str());
 	if (!file.is_open())
 		throw std::runtime_error("Error: could not open input file");
 
 	std::string line;
 	std::getline(file, line);
-	while (std::getline(file, line))
-	{
+	while (std::getline(file, line)) {
 		size_t sep = line.find(" | ");
-		if (sep == std::string::npos)
-		{
+		if (sep == std::string::npos) {
 			std::cerr << "Error: bad input => " << line << std::endl;
 			continue;
 		}
 		std::string date = line.substr(0, sep);
 		std::string valueStr = line.substr(sep + 3);
 
-		if (!validateDate(date))
-		{
+		if (!validateDate(date)) {
 			std::cerr << "Error: bad input => " << line << std::endl;
 			continue;
 		}
@@ -74,11 +63,9 @@ void BitcoinExchange::processInput(const std::string &filename)
 		std::map<std::string, double>::const_iterator it = _database.lower_bound(date);
 		if (it == _database.end())
 			--it;
-		else if (it->first != date)
-		{
-			if (it == _database.begin())
-			{
-				std::cerr << "Error: no earlier date in database for " << date << std::endl;
+		else if (it->first != date) {
+			if (it == _database.begin()) {
+				std::cerr << "Error: bad input => " << date << std::endl;
 				continue;
 			}
 			--it;
@@ -90,16 +77,14 @@ void BitcoinExchange::processInput(const std::string &filename)
 	}
 }
 
-bool BitcoinExchange::validateDate(const std::string &date)
-{
+bool BitcoinExchange::validateDate(const std::string &date) {
 	if (date.length() != 10)
 		return false;
 
 	if (date[4] != '-' || date[7] != '-')
 		return false;
 
-	for (int i = 0; i < 10; ++i)
-	{
+	for (int i = 0; i < 10; ++i) {
 		if (i == 4 || i == 7)
 			continue;
 		if (!std::isdigit(date[i]))
@@ -109,14 +94,16 @@ bool BitcoinExchange::validateDate(const std::string &date)
 	int month = std::atoi(date.substr(5, 2).c_str());
 	int day = std::atoi(date.substr(8, 2).c_str());
 
-	if (year)
-	{
-	}
-
 	if (month < 1 || month > 12)
 		return (false);
 
 	int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+	if (month == 2) {
+		bool has29 = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+		if (has29)
+			daysInMonth[1] = 29;
+	}
 
 	if (day < 1 || day > daysInMonth[month - 1])
 		return (false);
@@ -124,23 +111,19 @@ bool BitcoinExchange::validateDate(const std::string &date)
 	return (true);
 }
 
-bool BitcoinExchange::validateValue(const std::string &valueStr)
-{
+bool BitcoinExchange::validateValue(const std::string &valueStr) {
 
 	char *end = NULL;
 	double value = std::strtod(valueStr.c_str(), &end);
-	if (*end != '\0')
-	{
+	if (*end != '\0') {
 		std::cerr << "Error: bad input => " << valueStr << std::endl;
 		return (false);
 	}
-	if (value < 0)
-	{
+	if (value < 0) {
 		std::cerr << "Error: not a positive number" << std::endl;
 		return (false);
 	}
-	if (value > 1000)
-	{
+	if (value > 1000) {
 		std::cerr << "Error: too large a number" << std::endl;
 		return (false);
 	}

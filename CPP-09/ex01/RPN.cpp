@@ -5,6 +5,14 @@ RPN::RPN() {
 
 RPN::~RPN() {
 }
+RPN(const RPN &other) : _numbers(other._numbers) {
+}
+RPN &operator=(const RPN &other) {
+	if (this != &other) {
+		this->_numbers = other._numbers;
+	}
+	return (*this);
+}
 
 void RPN::addNumber(int nbr) {
 	_numbers.push(nbr);

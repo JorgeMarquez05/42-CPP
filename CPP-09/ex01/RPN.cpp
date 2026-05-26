@@ -5,9 +5,9 @@ RPN::RPN() {
 
 RPN::~RPN() {
 }
-RPN(const RPN &other) : _numbers(other._numbers) {
+RPN::RPN(const RPN &other) : _numbers(other._numbers) {
 }
-RPN &operator=(const RPN &other) {
+RPN &RPN::operator=(const RPN &other) {
 	if (this != &other) {
 		this->_numbers = other._numbers;
 	}
